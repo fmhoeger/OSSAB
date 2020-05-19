@@ -1,4 +1,4 @@
 library(psychTestR)
-library(psychSAT)
+library(OSSAB)
 
 PAT_standalone()

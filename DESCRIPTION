@@ -1,6 +1,6 @@
-Package: psychSAT
+Package: OSSAB
 Type: Package
-Title: Spatial Ability Tests (psychSAT)
+Title: Online Short Spatial Ability Battery (OSSAB)
 Version: 0.99.0
 Author: Frank Höger
 Maintainer: Frank Höger <fmhoeger@mirsem.org>

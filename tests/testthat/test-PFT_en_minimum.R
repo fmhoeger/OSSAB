@@ -1,9 +1,9 @@
 library(psychTestR)
-library(psychSAT)
+library(OSSAB)
 library(testthat)
 
 dir <-
-  system.file("tests/PFT_en", package = "psychSAT", mustWork = TRUE)
+  system.file("tests/PFT_en", package = "OSSAB", mustWork = TRUE)
 app <- AppTester$new(dir)
 
 app$expect_ui_text("Please enter your ID Continue")

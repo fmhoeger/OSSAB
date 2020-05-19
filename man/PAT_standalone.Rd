@@ -6,8 +6,8 @@
 This function launches a standalone testing session for the PAT questionnaire.}
 \usage{
 PAT_standalone(
-  dict = psychSAT::PAT_dict,
-  item_bank = psychSAT::PAT_item_bank,
+  dict = OSSAB::PAT_dict,
+  item_bank = OSSAB::PAT_item_bank,
   languages = c("ru", "en"),
   ...
 )

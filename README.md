@@ -1,8 +1,8 @@
-# Spatial Ability Tests (psychSAT)
+# Online Short Spatial Ability Battery (OSSAB)
 
 [![Travis build status](https://travis-ci.org/fmhoeger/MIQ.svg?branch=master)](https://travis-ci.org/fmhoeger/MIQ)
 
-The psychSAT package contains tests for spatial ability .
+The OSSAB package contains tests for spatial ability .
 
 
 ## Citation

@@ -6,8 +6,8 @@
 This function launches a standalone testing session for the SRT questionnaire.}
 \usage{
 SRT_standalone(
-  dict = psychSAT::SRT_dict,
-  item_bank = psychSAT::SRT_item_bank,
+  dict = OSSAB::SRT_dict,
+  item_bank = OSSAB::SRT_item_bank,
   languages = c("ru", "en"),
   ...
 )

@@ -1,4 +1,4 @@
 library(testthat)
-library(psychSAT)
+library(OSSAB)
 
-test_check("psychSAT")
+test_check("OSSAB")

@@ -6,8 +6,8 @@
 This function launches a standalone testing session for the MRT questionnaire.}
 \usage{
 MRT_standalone(
-  dict = psychSAT::MRT_dict,
-  item_bank = psychSAT::MRT_item_bank,
+  dict = OSSAB::MRT_dict,
+  item_bank = OSSAB::MRT_item_bank,
   languages = c("ru", "en"),
   ...
 )

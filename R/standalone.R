@@ -64,8 +64,8 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  #version_info <- read.delim(system.file("extdata", "VERSION", package="psychSAT"), header = FALSE)
-  shiny::addResourcePath("www", system.file("www", package = "psychSAT"))
+  #version_info <- read.delim(system.file("extdata", "VERSION", package="OSSAB"), header = FALSE)
+  shiny::addResourcePath("www", system.file("www", package = "OSSAB"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
@@ -77,7 +77,7 @@ standalone <- function(label,
       researcher_email = researcher_email,
       demo = FALSE,
       languages = languages#,
-      #app_info = paste0("psychSAT v", toString(version_info$V1[1]))
+      #app_info = paste0("OSSAB v", toString(version_info$V1[1]))
     )
   )
 }
@@ -93,7 +93,7 @@ standalone <- function(label,
 #' @param ... Further arguments to be passed to \code{\link{MRT_standalone}()}.
 #' @export
 MRT_standalone <-
-  function(dict = psychSAT::MRT_dict, item_bank = psychSAT::MRT_item_bank, languages = c("ru", "en"), ...)
+    function(dict = OSSAB::MRT_dict, item_bank = OSSAB::MRT_item_bank, languages = c("ru", "en"), ...)
     standalone(label = "MRT", dict = dict, item_bank = item_bank, languages = languages, ...)
 
 #' PFT Standalone
@@ -107,7 +107,7 @@ MRT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PFT_standalone}()}.
 #' @export
 PFT_standalone <-
-  function(dict = psychSAT::PFT_dict, item_bank = psychSAT::PFT_item_bank, languages = c("ru", "en"), ...)
+  function(dict = OSSAB::PFT_dict, item_bank = OSSAB::PFT_item_bank, languages = c("ru", "en"), ...)
     standalone(label = "PFT", dict = dict, item_bank = item_bank, languages = languages, ...)
 
 #' PAT Standalone
@@ -121,7 +121,7 @@ PFT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PAT_standalone}()}.
 #' @export
 PAT_standalone <-
-  function(dict = psychSAT::PAT_dict, item_bank = psychSAT::PAT_item_bank, languages = c("ru", "en"), ...)
+  function(dict = OSSAB::PAT_dict, item_bank = OSSAB::PAT_item_bank, languages = c("ru", "en"), ...)
     standalone(label = "PAT", dict = dict, item_bank = item_bank, languages = languages, ...)
 
 #' SRT Standalone
@@ -135,5 +135,5 @@ PAT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SRT_standalone}()}.
 #' @export
 SRT_standalone <-
-  function(dict = psychSAT::SRT_dict, item_bank = psychSAT::SRT_item_bank, languages = c("ru", "en"), ...)
+  function(dict = OSSAB::SRT_dict, item_bank = OSSAB::SRT_item_bank, languages = c("ru", "en"), ...)
     standalone(label = "SRT", dict = dict, item_bank = item_bank, languages = languages, ...)
