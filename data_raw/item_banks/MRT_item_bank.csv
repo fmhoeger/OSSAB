@@ -1,0 +1,70 @@
+"key";"correct_answer";"logic"
+"i1";"A";"image: i1_question
+A = 1
+B = 0
+C = 0"
+"i2";"C";"image: i2_question
+A = 0
+B = 0
+C = 1"
+"i3";"A";"image: i3_question
+A = 1
+B = 0
+C = 0
+"
+"i4";"B";"image: i4_question
+A = 0
+B = 1
+C = 0
+"
+"i5";"C";"image: i5_question
+A = 0
+B = 0
+C = 1
+"
+"i6";"B";"image: i6_question
+A = 0
+B = 1
+C = 0
+"
+"i7";"C";"image: i7_question
+A = 0
+B = 0
+C = 1
+"
+"i8";"B";"image: i8_question
+A = 0
+B = 1
+C = 0"
+"i9";"B";"image: i9_question
+A = 0
+B = 1
+C = 0"
+"i10";"C";"image: i10_question
+A = 0
+B = 0
+C = 1"
+"i11";"B";"image: i11_question
+A = 0
+B = 1
+C = 0"
+"i12";"B";"image: i12_question
+A = 0
+B = 1
+C = 0"
+"i13";"C";"image: i13_question
+A = 0
+B = 0
+C = 1"
+"i14";"C";"image: i14_question
+A = 0
+B = 0
+C = 1"
+"i15";"B";"image: i15_question
+A = 0
+B = 1
+C = 0"
+"i16";"A";"image: i16_question
+A = 1
+B = 0
+C = 0"

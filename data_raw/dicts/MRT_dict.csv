@@ -1,0 +1,236 @@
+"key";"ru";"en"
+"TITLE";"Тест на понимание законов Mеханики";"Mechanical Reasoning Test"
+"INSTRUCTIONS";"<b>Инструкция</b>
+
+Вы увидите изображение с вопросом под ним, и три возможных варианта ответа. Пожалуйста, нажмите на правильный ответ и кнопку Вперёд, после чего будет загружено новое задание.
+На каждое задание дается 25 секунд.
+Если время закончится прежде, чем Вы успеете ответить, просто нажмите <i>Далее</i>, чтобы перейти к следующему заданию.
+
+Удачи!
+
+<i>Нажмите на кнопку ниже, чтобы продолжить.</i>";"<b>Instructions</b>
+
+You will see an image with a question under it, and three possible answers. Please click on the correct answer and the Forward button, after which a new task will be downloaded.
+You are given 25 seconds each task.
+If the time runs out before you click on the right answer, just click <i>Next</i> to continue to the next task.
+
+Good luck!
+
+<i>Click on the button below to continue.</i>"
+"PRACTICE_QUESTION_1";"Пример задания.
+
+Когда левая шестеренка вращается в направлении, показанном на картинке, в какую сторону движется правая шестеренка?
+
+Если Вы не уверены, нажмите кнопку <i>Вперёд</i>, чтобы увидеть ответ.
+
+Выберите правильный ответ:";"<b>Example question.</b>
+
+When the left gear rotates in the direction shown in the picture, in which direction does the right gear move?
+
+If you are not sure, click the <i>Show answer</i> button to see the answer.
+
+Choose the correct answer:"
+"PRACTICE_FEEDBACK_1";"<b>Самопроверка</b><br><br>
+
+Для этого задания правильным ответом является вариант A.
+Нажмите кнопку Вперёд, чтобы приступить к заданиям.";"<b>Self-check</b><br><br>
+
+For this question, the correct answer is option A.
+
+Click the <i>Continue</i> button to start the test."
+"QUESTION_1";"<b>Задание 1.</b>
+
+Если рукоятка 2 повернется в указанном направлении, в каком направлении повернется шестеренка 1?
+
+Выберите правильный ответ:";"<b>Question 1.</b>
+
+If the handle 2 rotates in the indicated direction, in which direction will the gear 1 rotate?
+
+Choose the correct answer:"
+"QUESTION_2";"<b>Задание 2.</b>
+
+Если шестеренка 1 сделает один полный оборот, шестеренка 2 сделает…
+
+Выберите правильный ответ";"<b>Question 2.</b>
+
+If gear 1 makes one full turn, gear 2 makes...
+
+Choose the correct answer:
+"
+"QUESTION_3";"<b>Задание 3.</b>
+
+Если опустить рукоятку вниз, в каком направлении повернется колесо?
+
+Выберите правильный ответ";"<b>Question 3.</b>
+
+If you lower the handle down, in what direction will the wheel turn?
+
+Choose the correct answer:"
+"QUESTION_4";"<b>Задание 4.</b>
+
+Если плита 1 будет двигаться в указанном направлении, в какую сторону будет поворачиваться шестеренка?
+
+Выберите правильный ответ";"<b>Question 4.</b>
+
+If the plate 1 moves in the indicated direction, in which direction will the gear turn?
+
+Choose the correct answer:"
+"QUESTION_5";"<b>Задание 5.</b>
+
+Кто из этих людей может увидеть другого в зеркале?
+
+Выберите правильный ответ";"<b>Question 5.</b>
+
+Which of these people can see the other in the mirror?
+
+Choose the correct answer:"
+"QUESTION_6";"<b>Задание 6.</b>
+
+Какой из ящиков можно толкать дольше и не коснуться пола?
+
+Выберите правильный ответ";"<b>Question 6.</b>
+
+Which of the boxes can be pushed longer without touching the floor?
+
+Choose the correct answer:"
+"QUESTION_7";"<b>Задание 7.</b>
+
+Если человек в лодке гребет только правым веслом, в каком направлении плывет лодка?
+
+Выберите правильный ответ";"<b>Question 7.</b>
+
+If a person in a boat is paddling only with the right paddle, in which direction is the boat sailing?
+
+Choose the correct answer:"
+"QUESTION_8";"<b>Задание 8.</b>
+
+Если человек приближается к стене, в каком направлении двигается верхняя граница тени?
+
+Выберите правильный ответ
+
+
+Ни в одном из направлений";"<b>Question 8.</b>
+
+If a person approaches the wall, in what direction does the upper border of the shadow move?
+
+Choose the correct answer:"
+"QUESTION_9";"<b>Задание 9.</b>
+
+Если привести маятники в движение, какой из двух сделает больше колебаний в минуту?
+
+Выберите правильный ответ";"<b>Question 9.</b>
+
+If you move the pendulums, which of the two will make more swings per minute?
+
+Choose the correct answer:"
+"QUESTION_10";"<b>Задание 10.</b>
+
+Какой мерный стаканчик размечен правильно?
+
+Выберите правильный ответ";"<b>Question 10.</b>
+
+Which measuring cup is marked correctly?
+
+Choose the correct answer:"
+"QUESTION_11";"<b>Задание 11.</b>
+
+При каком расположении трубок вытечет больше всего воды?
+
+Выберите правильный ответ";"<b>Question 11.</b>
+
+What is the location of the pipes where the most water will flow out?
+
+Choose the correct answer:"
+"QUESTION_12";"<b>Задание 12.</b>
+
+Где нужно закрепить цепь, чтобы знак держался на столбе?
+
+Выберите правильный ответ";"<b>Question 12.</b>
+
+Where do you need to fix the chain so that the sign rests on the post?
+
+Choose the correct answer:"
+"QUESTION_13";"<b>Задание 13.</b>
+
+Вам нужно поднять эту рейку с земли и нести ее одной рукой. Где нужно взяться за рейку, чтобы нести ее было как можно легче?
+
+Выберите правильный ответ";"<b>Question 13.</b>
+
+You need to lift this rail from the ground and carry it with one hand. Where do I need to grasp the rail in order to carry it as easily as possible?
+
+Choose the correct answer:"
+"QUESTION_14";"<b>Задание 14.</b>
+
+Если пушка горизонтально выстрелила ядром, и в тот же момент вы выронили другое ядро из рук, какое из них быстрее упадет на землю?
+
+Выберите правильный ответ";"<b>Question 14.</b>
+
+If a cannon shot horizontally with a core, and at the same moment you dropped the other core out of your hands, which one would fall to the ground faster?
+
+Choose the correct answer:"
+"QUESTION_15";"<b>Задание 15.</b>
+
+Девочка хочет раскачаться очень быстро. Какие качели ей лучше выбрать?
+
+Выберите правильный ответ";"<b>Question 15.</b>
+
+The girl wants to swing very fast. What of these swings should she choose?
+
+Choose the correct answer:"
+"QUESTION_16";"<b>Задание 16.</b>
+
+Какая рукоятка будет поворачиваться быстрее всего?
+
+Выберите правильный ответ";"<b>Question 16.</b>
+
+Which handle will turn the fastest?
+
+Choose the correct answer:"
+"QUESTION_1_CHOICE_A";"А. ";"A."
+"QUESTION_1_CHOICE_B";"Б.";"B."
+"QUESTION_1_CHOICE_C";"В. Может повернуться в любом направлении.";"C. Can rotate in any direction."
+"QUESTION_2_CHOICE_A";"А. Два полных оборота";"A. Two full turns"
+"QUESTION_2_CHOICE_B";"Б. Пол-оборота";"B. Half turn"
+"QUESTION_2_CHOICE_C";"В. Один полный оборот";"C. One full turn"
+"QUESTION_3_CHOICE_A";"А.";"A. "
+"QUESTION_3_CHOICE_B";"Б.";"B. "
+"QUESTION_3_CHOICE_C";"В. Может повернуться в обоих направлениях";"C. Can turn in both directions"
+"QUESTION_4_CHOICE_A";"А. ";"A. "
+"QUESTION_4_CHOICE_B";"Б. ";"B. "
+"QUESTION_4_CHOICE_C";"В. Может поворачиваться в обоих направлениях";"C. Can turn in both directions"
+"QUESTION_5_CHOICE_A";"А. ";"A. "
+"QUESTION_5_CHOICE_B";"Б. ";"B. "
+"QUESTION_5_CHOICE_C";"В. Оба видят друг друга";"C. Both see each other"
+"QUESTION_6_CHOICE_A";"А. ";"A. "
+"QUESTION_6_CHOICE_B";"Б. ";"B. "
+"QUESTION_6_CHOICE_C";"В. Разницы нет";"C. No difference"
+"QUESTION_7_CHOICE_A";"А. ";"A. "
+"QUESTION_7_CHOICE_B";"Б. ";"B. "
+"QUESTION_7_CHOICE_C";"В. ";"C. "
+"QUESTION_8_CHOICE_A";"А. ";"A. "
+"QUESTION_8_CHOICE_B";"Б. ";"B. "
+"QUESTION_8_CHOICE_C";"В. Ни в одном из направлений";"C. None of the directions"
+"QUESTION_9_CHOICE_A";"А. ";"A. "
+"QUESTION_9_CHOICE_B";"Б. ";"B. "
+"QUESTION_9_CHOICE_C";"В. Разницы нет";"C. No difference"
+"QUESTION_10_CHOICE_A";"А. ";"A. "
+"QUESTION_10_CHOICE_B";"Б. ";"B. "
+"QUESTION_10_CHOICE_C";"В. ";"C. "
+"QUESTION_11_CHOICE_A";"А. ";"A. "
+"QUESTION_11_CHOICE_B";"Б. ";"B. "
+"QUESTION_11_CHOICE_C";"В. ";"C. "
+"QUESTION_12_CHOICE_A";"А. ";"A. "
+"QUESTION_12_CHOICE_B";"Б. ";"B. "
+"QUESTION_12_CHOICE_C";"В. A или Б";"C. A or B"
+"QUESTION_13_CHOICE_A";"А. ";"A. "
+"QUESTION_13_CHOICE_B";"Б. ";"B. "
+"QUESTION_13_CHOICE_C";"В. ";"C. "
+"QUESTION_14_CHOICE_A";"А. Ваше";"A. yours"
+"QUESTION_14_CHOICE_B";"Б. Из пушки";"B. form a cannon"
+"QUESTION_14_CHOICE_C";"В. Разницы нет";"C. No difference"
+"QUESTION_15_CHOICE_A";"А. ";"A. "
+"QUESTION_15_CHOICE_B";"Б. ";"B. "
+"QUESTION_15_CHOICE_C";"В. Разницы нет";"C. No difference"
+"QUESTION_16_CHOICE_A";"А. ";"A. "
+"QUESTION_16_CHOICE_B";"Б. ";"B. "
+"QUESTION_16_CHOICE_C";"В. ";"C. "

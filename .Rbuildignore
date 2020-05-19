@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+.RData
+
+.travis.yml
+^Makefile
+data_raw
+
+INSTALL.md
+^\.Rprofile$
+^data-raw$
