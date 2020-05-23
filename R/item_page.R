@@ -1,12 +1,12 @@
 trigger_img_button <- function (inputId, item_id, img_src, width, height, margin = height / 10){
   inputId <- htmltools::htmlEscape(inputId, attribute = TRUE)
   style <- sprintf("width: %dpx; height: %dpx; margin: %dpx; background: url('%s'); background-size: %dpx %dpx; background-position: center center;", width, height, 4, img_src, width, height)
-  shiny::actionButton(inputId = inputId,
+  shiny::actionButton(inputId = paste0("button-", inputId),
                       class = paste0("img-button-", item_id),
                       label = "",
                       style = style,
                       icon = NULL,
-                      onclick = "trigger_button(this.id);")
+                      onclick = "set_choice_value(this.id.split('-')[1]);")
 }
 
 NAFC_page_with_img <- function(label,
@@ -29,8 +29,10 @@ NAFC_page_with_img <- function(label,
     tagify(prompt),
     shiny::tags$img(id = item_id, src = sprintf("www/images/%s/%s/%s_question.png", label, item_id, item_id), style = paste0("margin-top: 10px; width: ", question_image_width)),
     shiny::div(choices, id = response_ui_id),
-    shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"var buttons = document.getElementsByClassName('img-button-%s'); for (var i=0, len=buttons.length; i<len; i++) { buttons[i].style.display='none'; } \", %d)", item_id, timeout_in_msec))),
-    shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"document.getElementById('%s').style.display='none';\", %d)", item_id, timeout_in_msec))),
+    shiny::p(psychTestR::trigger_button(paste0("no-id-", item_id), psychTestR::i18n("FORWARD"), style = "display: block; margin-top: 12px;", class = paste(paste0("forward-button-", item_id), "shiny-bound-input"), disabled = TRUE)),
+    shiny::tags$script(shiny::HTML(sprintf("function set_choice_value(id) { var forward_buttons = document.getElementsByClassName('forward-button-%s'); for (var i=0, len=forward_buttons.length; i<len; i++) { forward_buttons[i].id = id; forward_buttons[i].disabled = false; } }", item_id, item_id))),
+    shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"var image_buttons = document.getElementsByClassName('img-button-%s'); for (var i=0, len=image_buttons.length; i<len; i++) { image_buttons[i].style.display='none'; } var forward_buttons = document.getElementsByClassName('forward-button-%s'); for (var i=0, len=forward_buttons.length; i<len; i++) { forward_buttons[i].style.display='none'; }\", %d)", item_id, item_id, timeout_in_msec))),
+    shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"document.getElementById('%s').style.display='none'; \", %d)", item_id, timeout_in_msec))),
     shiny::p(psychTestR::trigger_button("next", button_text, class = paste0("next-", item_id), style = paste0("margin-top: 15px; display: ", next_button_display))),
     shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"var next_buttons = document.getElementsByClassName('next-%s'); for (var i=0, len=next_buttons.length; i<len; i++) { next_buttons[i].style.display='block'; } \", %d)", item_id, timeout_in_msec)))
     )
@@ -54,8 +56,8 @@ get_answer_button <- function(label,
   item_id <- sprintf("%s%d", item_prefix, item_number)
   img_src <- file.path("www/images", label, item_id, sprintf("%s_choice_%s.png", item_id, choice_id))
 
-
   if (as_image_button) {
+
     trigger_img_button(inputId = choice_id,
                        item_id = item_id,
                        img_src = img_src,
@@ -63,7 +65,7 @@ get_answer_button <- function(label,
                        height = height,
                        margin = height / 10)
   } else {
-    psychTestR::trigger_button(choice_id, psychTestR::i18n(sprintf("QUESTION_%d_CHOICE_%s", item_number, choice_id)), style = "display: block; margin-top: 12px;", class = paste0("img-button-", item_id))
+    shiny::actionButton(paste0("button-", choice_id), psychTestR::i18n(sprintf("QUESTION_%d_CHOICE_%s", item_number, choice_id)), style = "display: block; margin-top: 12px;", class = paste0("img-button-", item_id), onclick = "set_choice_value(this.id.split('-')[1]);")
   }
 }
 
