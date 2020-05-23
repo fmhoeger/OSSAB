@@ -2,9 +2,9 @@ library(psychTestR)
 library(OSSAB)
 library(testthat)
 
-dir <-
-  system.file("tests/PFT_en", package = "OSSAB", mustWork = TRUE)
-app <- AppTester$new(dir)
+context("PFT")
+
+app <- AppTester$new("apps/PFT_en")
 
 app$expect_ui_text("Please enter your ID Continue")
 app$set_inputs(p_id = "abcde")

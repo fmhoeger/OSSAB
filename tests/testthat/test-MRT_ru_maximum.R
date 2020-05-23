@@ -2,9 +2,9 @@ library(psychTestR)
 library(OSSAB)
 library(testthat)
 
-dir <-
-  system.file("tests/MRT_ru", package = "OSSAB", mustWork = TRUE)
-app <- AppTester$new(dir)
+context("MRT")
+
+app <- AppTester$new("apps/MRT_ru")
 
 app$expect_ui_text("Пожалуйста, введите логин Вперёд")
 app$set_inputs(p_id = "aбвгд")
