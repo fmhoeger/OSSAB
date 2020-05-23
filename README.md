@@ -14,7 +14,6 @@ You can find these version numbers from R by running the following commands:
 ``` r
 library(OSSAB)
 library(psychTestR)
-library(psychTestRCAT)
 if (!require(devtools)) install.packages("devtools")
 x <- devtools::session_info()
 x$packages[x$packages$package %in% c("OSSAB", "psychTestR", "psychTestRCAT"), ]

@@ -14,7 +14,6 @@ Imports:
     dplyr (>= 0.8.5),
     htmltools (>= 0.4.0),
     methods (>= 3.6.1),
-    psychTestRCAT (>= 1.6.0),
     psychTestR (>= 2.19.0),
     purrr (>= 0.3.4),
     shiny (>= 1.4.0),
