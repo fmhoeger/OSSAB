@@ -1,5 +1,3 @@
-library(tidyverse)
-
 for (questionnaire in c("MRT", "PAT", "PFT", "SRT")) {
     item_bank_raw <- read.csv(paste0("data_raw/item_banks/", questionnaire, "_item_bank.csv"), sep = ";", stringsAsFactors = FALSE, header = TRUE)
     assign(paste0(questionnaire, "_item_bank"), item_bank_raw)

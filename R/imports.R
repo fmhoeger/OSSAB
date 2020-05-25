@@ -1,9 +1,6 @@
 #' @importFrom dplyr "%>%"
 NULL
 
-#' @importFrom dplyr "filter"
-NULL
-
 #' @importFrom dplyr "pull"
 NULL
 
@@ -11,9 +8,6 @@ NULL
 NULL
 
 #' @importFrom stats "dnorm"
-NULL
-
-#' @importFrom tibble "tibble"
 NULL
 
 #' @importFrom psychTestR "get_local"

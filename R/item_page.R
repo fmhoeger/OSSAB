@@ -103,10 +103,8 @@ Item <- function(label,
                  save_answer = TRUE,
                  get_answer = NULL,
                  on_complete = NULL) {
-
   page_prompt <- shiny::div(prompt)
 
-  # TODO
   choice_ids = c()
   as_image_button <- TRUE
   if (label == "MRT") {

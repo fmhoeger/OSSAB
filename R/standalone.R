@@ -1,6 +1,4 @@
 library(shiny)
-library(stringr)
-library(tidyverse)
 
 options(shiny.error = browser)
 debug_locally <- !grepl("shiny-server", getwd())
@@ -65,20 +63,15 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  #version_info <- read.delim(system.file("extdata", "VERSION", package="OSSAB"), header = FALSE)
   shiny::addResourcePath("www", system.file("www", package = "OSSAB"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
-      title = dict$translate(
-        stringr::str_interp("TITLE"),
-        languages[1]
-      ),
+      title = dict$translate("TITLE", languages[1]),
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
-      languages = languages#,
-      #app_info = paste0("OSSAB v", toString(version_info$V1[1]))
+      languages = languages
     )
   )
 }
