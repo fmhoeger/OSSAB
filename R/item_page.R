@@ -22,7 +22,7 @@ NAFC_page_with_img <- function(label,
                                admin_ui = NULL) {
   stopifnot(purrr::is_scalar_character(label))
 
-  question_image_width <- if (label %in% c("MRT", "SRT")) { "268px" } else { "468px" }
+  question_image_width <- if (label %in% c("MRT", "SRT")) { "208px" } else { "468px" }
   next_button_display <- if (item_id == "p1") { "block" } else { "none" }
 
   ui <- shiny::div(
