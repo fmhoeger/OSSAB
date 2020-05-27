@@ -10,7 +10,7 @@ feedback_with_score <- function(label, dict) {
       psychTestR::reactive_page(function(state, ...) {
         results <- psychTestR::get_results(state = state, complete = TRUE, add_session_info = FALSE)
         num_question <- length(results[[label]]) - 1
-        percentage_correct <- results[[label]]$score * 100 / num_question
+        percentage <- results[[label]]$score * 100 / num_question
         sum_score <- results[[label]]$score
         text_finish <- psychTestR::i18n("COMPLETED",
                                         html = TRUE,
@@ -58,18 +58,19 @@ feedback_with_graph <- function(label, dict) {
 }
 
 feedback_graph_normal_curve <- function(score, x_min = 0, x_max = 16, x_mean = 8, x_sd = 2.5) {
-  percentage_correct <- score * 100 / x_max
+  ratio <- score / x_max
+  percentage <- ratio * 100
   x = NULL
   q <-
     ggplot2::ggplot(data.frame(x = c(x_min, x_max)), ggplot2::aes(x)) +
     ggplot2::stat_function(fun = stats::dnorm, args = list(mean = x_mean, sd = x_sd)) +
     ggplot2::stat_function(fun = stats::dnorm, args = list(mean = x_mean, sd = x_sd),
-                           xlim = c(x_min, (x_max - x_min) * percentage_correct + x_min),
+                           xlim = c(x_min, (x_max - x_min) * ratio + x_min),
                            fill = "lightblue4",
                            geom = "area")
   q <- q + ggplot2::theme_bw()
   title_prefix <- paste0(psychTestR::i18n("CORRECT_ANSWERS"), ":")
-  title_x_of_y <- paste0(score, "/", x_max, paste0(" (", percentage_correct, " %)"))
+  title_x_of_y <- paste0(score, "/", x_max, paste0(" (", percentage, " %)"))
   x_axis_lab <- paste(psychTestR::i18n("NUMBER_OF"), tolower(psychTestR::i18n("CORRECT_ANSWERS")))
   q <- q + ggplot2::labs(x = x_axis_lab, y = "")
   q <- q + ggplot2::ggtitle(paste(title_prefix, title_x_of_y)) + ggplot2::theme(plot.title = ggplot2::element_text(size = 10))
