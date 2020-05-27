@@ -35,8 +35,8 @@ NAFC_page_with_img <- function(label,
     shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"document.getElementById('%s').style.display='none'; \", %d)", item_id, timeout_in_msec))),
     shiny::p(psychTestR::trigger_button("next", button_text, class = paste0("next-", item_id), style = paste0("margin-top: 15px; display: ", next_button_display))),
     shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"var next_buttons = document.getElementsByClassName('next-%s'); for (var i=0, len=next_buttons.length; i<len; i++) { next_buttons[i].style.display='block'; } \", %d)", item_id, timeout_in_msec))),
-    shiny::tags$style(shiny::HTML(".active_button { border: 2px solid #111;}"))
-    )
+    shiny::tags$style(shiny::HTML(".active_button { box-shadow: 2px 2px 2px #111; }"))
+  )
   if (is.null(get_answer)) {
     get_answer <- function(input, ...) input$last_btn_pressed
   }
