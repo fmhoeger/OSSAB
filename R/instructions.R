@@ -3,7 +3,7 @@ instructions_page <- function(key, label, style = "text-align: center; margin-le
     shiny::div(psychTestR::i18n(key, html = TRUE)),
     if (label == "PFT") shiny::tags$img(src = sprintf("www/images/%s/example.png", label), style = "margin-top: 10px; width: 468px; display: block;"),
     if (label == "PFT") shiny::tags$img(src = sprintf("www/images/%s/example_folding.png", label), style = "margin-top: 10px; margin-bottom: 20px; width: 468px; display: block;"),
-    shiny::p(psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::p(psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "margin-top: 15px"))
   )
 
   psychTestR::page(ui = ui, label = label)

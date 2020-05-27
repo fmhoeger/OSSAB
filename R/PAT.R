@@ -33,6 +33,7 @@ PAT <- function(dict,
       main_test(label = label,
                 item_bank = item_bank,
                 timeout_in_msec = timeout_in_msec),
-      dict = dict)
+      dict = dict),
+    if (with_feedback) feedback_with_graph("PAT", dict)
   )
 }

@@ -32,7 +32,7 @@ practice_feedback_page <- function(label, item_number, answer) {
     tagify(prompt),
     #shiny::div(psychTestR::i18n(correctness_text), style = "font-weight: bold;"),
     if (label %in% c("PAT", "PFT", "SRT")) shiny::tags$img(id = item_id, src = sprintf("www/images/%s/%s/%s_choice_A.png", label, item_id, item_id), style = "margin-top: 10px; margin-bottom: 15px; width: 106px;"),
-    shiny::p(psychTestR::trigger_button("back", psychTestR::i18n("BACK"), style = "width: 100px;"), psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "width: 100px;"))
+    shiny::p(psychTestR::trigger_button("back", psychTestR::i18n("BACK"), style = "width: 100px; margin-top: 15px"), psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "width: 100px; margin-top: 15px"))
   )
 
   psychTestR::page(ui = ui,

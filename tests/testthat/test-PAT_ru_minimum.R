@@ -51,6 +51,9 @@ app$expect_ui_text("Задание 15. Определите, какая фигу
 app$click("button-A")
 app$click("A")
 
+app$expect_ui_text("Врезультат Вперёд")
+app$click_next()
+
 app$expect_ui_text("Ваш результат записан. Это окно можно закрыть.")
 
 results <- app$get_results() %>% as.list()

@@ -53,6 +53,9 @@ app$expect_ui_text("Задание 16. Какая рукоятка будет п
 app$click("button-B")
 app$click("B")
 
+app$expect_ui_text("Врезультат Вперёд")
+app$click_next()
+
 app$expect_ui_text("Ваш результат записан. Это окно можно закрыть.")
 
 results <- app$get_results() %>% as.list()

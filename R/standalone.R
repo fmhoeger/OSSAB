@@ -52,6 +52,7 @@ standalone <- function(label,
       dict = dict,
       item_bank = item_bank,
       with_practice = with_practice,
+      with_feedback = with_feedback,
       ...
     ),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
