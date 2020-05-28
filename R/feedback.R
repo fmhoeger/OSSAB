@@ -10,7 +10,7 @@ feedback_with_score <- function(label, dict) {
       psychTestR::reactive_page(function(state, ...) {
         results <- psychTestR::get_results(state = state, complete = TRUE, add_session_info = FALSE)
         num_question <- length(results[[label]]) - 1
-        percentage <- results[[label]]$score * 100 / num_question
+        percentage <- round(results[[label]]$score * 100 / num_question, 3)
         sum_score <- results[[label]]$score
         text_finish <- psychTestR::i18n("COMPLETED",
                                         html = TRUE,
@@ -59,7 +59,7 @@ feedback_with_graph <- function(label, dict) {
 
 feedback_graph_normal_curve <- function(score, x_min = 0, x_max = 16, x_mean = 8, x_sd = 2.5) {
   ratio <- score / x_max
-  percentage <- ratio * 100
+  percentage <- round(ratio * 100, 3)
   x = NULL
   q <-
     ggplot2::ggplot(data.frame(x = c(x_min, x_max)), ggplot2::aes(x)) +
