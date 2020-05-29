@@ -12,7 +12,7 @@ trigger_img_button <- function (inputId, item_id, img_src, width, height, margin
 NAFC_page_with_img <- function(label,
                                prompt,
                                item_id,
-                               choices,
+                               answer_block,
                                button_text,
                                timeout_in_msec = NULL,
                                save_answer = TRUE,
@@ -28,7 +28,7 @@ NAFC_page_with_img <- function(label,
   ui <- shiny::div(
     tagify(prompt),
     shiny::tags$img(id = item_id, src = sprintf("www/images/%s/%s/%s_question.png", label, item_id, item_id), style = paste0("margin-top: 10px; width: ", question_image_width)),
-    shiny::div(choices, id = response_ui_id, style="width: fit-content;"),
+    shiny::div(answer_block, id = response_ui_id, style="width: fit-content;"),
     shiny::p(psychTestR::trigger_button(paste0("no-id-", item_id), psychTestR::i18n("FORWARD"), style = "display: block; margin-top: 22px;", class = paste(paste0("forward-button-", item_id), "shiny-bound-input"), disabled = TRUE)),
     shiny::tags$script(shiny::HTML(sprintf("function set_choice_value(elem) { var id = elem.id.split('-')[1]; var forward_buttons = document.getElementsByClassName('forward-button-%s'); var image_buttons = document.getElementsByClassName('img-button-%s'); for (var i=0, len=forward_buttons.length; i<len; i++) { forward_buttons[i].id = id; forward_buttons[i].disabled = false; }; for (var i=0, len=image_buttons.length; i<len; i++) { image_buttons[i].classList.remove('active_button'); }; elem.classList.add('active_button') }", item_id, item_id))),
     shiny::tags$script(shiny::HTML(sprintf("window.setTimeout(\"var image_buttons = document.getElementsByClassName('img-button-%s'); for (var i=0, len=image_buttons.length; i<len; i++) { image_buttons[i].style.display='none'; } var forward_buttons = document.getElementsByClassName('forward-button-%s'); for (var i=0, len=forward_buttons.length; i<len; i++) { forward_buttons[i].style.display='none'; }\", %d)", item_id, item_id, timeout_in_msec))),
@@ -72,16 +72,16 @@ get_answer_button <- function(label,
 get_answer_block <- function(label,
                              item_prefix,
                              item_number,
-                             choice_ids,
+                             choices,
                              as_image_button = TRUE,
                              width = 550,
                              height = 100,
                              ...) {
-  n <- length(choice_ids)
-  ncols = length(choice_ids)
+  n <- length(choices)
+  ncols = length(choices)
   rows <- list()
   for (i in seq_len(n)) {
-    button <- get_answer_button(label, item_prefix, item_number, choice_ids[i], as_image_button, index = i)
+    button <- get_answer_button(label, item_prefix, item_number, choices[i], as_image_button, index = i)
     rows[[i]] <- button
   }
 
@@ -96,6 +96,7 @@ get_answer_block <- function(label,
 Item <- function(label,
                  item_prefix,
                  item_number,
+                 choices,
                  answer,
                  prompt = "",
                  button_text = "",
@@ -104,23 +105,14 @@ Item <- function(label,
                  get_answer = NULL,
                  on_complete = NULL) {
   page_prompt <- shiny::div(prompt)
-
-  choice_ids = c()
-  as_image_button <- TRUE
-  if (label == "MRT") {
-    choice_ids <- c("A", "B", "C")
-    as_image_button <- FALSE
-  } else {
-    choice_ids <- c("A", "B", "C", "D", "E")
-  }
-
+  as_image_button <- if (label == "MRT") { FALSE } else { TRUE }
   item_id <- sprintf("%s%d", item_prefix, item_number)
-  choices <- get_answer_block(label, item_prefix, item_number, choice_ids, as_image_button)
+  answer_block <- get_answer_block(label, item_prefix, item_number, choices, as_image_button = as_image_button)
 
   NAFC_page_with_img(label = label,
                      prompt = page_prompt,
                      item_id = item_id,
-                     choices = choices,
+                     answer_block = answer_block,
                      button_text = button_text,
                      timeout_in_msec = timeout_in_msec,
                      save_answer = save_answer,

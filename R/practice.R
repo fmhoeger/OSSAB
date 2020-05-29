@@ -17,6 +17,7 @@ practice_page <- function(label, item_number) {
   Item(label = label,
        item_prefix = "p",
        item_number = item_number,
+       choices = if (label == "MRT") { c("A", "B", "C") } else { c("A", "B", "C", "D", "E") },
        answer = practice_answer,
        prompt = psychTestR::i18n(sprintf("PRACTICE_QUESTION_%d", item_number), html = TRUE),
        button_text = psychTestR::i18n("SHOW_ANSWER"),

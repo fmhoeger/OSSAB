@@ -1,5 +1,5 @@
-"key";"correct_answer";"logic"
-"i1";"C";"image:  
+"key";"correct_answer";"choices";"logic"
+"i1";"C";"A,B,C,D,E";"image:
 i1_question
 i1_choice_A
 i1_choice_B
@@ -12,7 +12,7 @@ B=0
 C=1
 D=0
 E=0"
-"i2";"A";"image:  
+"i2";"A";"A,B,C,D,E";"image:
 i2_question
 i2_choice_A
 i2_choice_B
@@ -26,7 +26,7 @@ C=0
 D=0
 E=0
 "
-"i3";"C";"image:  
+"i3";"C";"A,B,C,D,E";"image:
 i3_question
 i3_choice_A
 i3_choice_B
@@ -40,7 +40,7 @@ C=1
 D=0
 E=0
 "
-"i4";"B";"image:  
+"i4";"B";"A,B,C,D,E";"image:
 i4_question
 i4_choice_A
 i4_choice_B
@@ -54,7 +54,7 @@ C=0
 D=0
 E=0
 "
-"i5";"C";"image:  
+"i5";"C";"A,B,C,D,E";"image:
 i5_question
 i5_choice_A
 i5_choice_B
@@ -68,7 +68,7 @@ C=1
 D=0
 E=0
 "
-"i6";"B";"image:  
+"i6";"B";"A,B,C,D,E";"image:
 i6_question
 i6_choice_A
 i6_choice_B
@@ -82,7 +82,7 @@ C=0
 D=0
 E=0
 "
-"i7";"B";"image:  
+"i7";"B";"A,B,C,D,E";"image:
 i7_question
 i7_choice_A
 i7_choice_B
@@ -96,7 +96,7 @@ C=0
 D=0
 E=0
 "
-"i8";"D";"image:  
+"i8";"D";"A,B,C,D,E";"image:
 i8_question
 i8_choice_A
 i8_choice_B
@@ -110,7 +110,7 @@ C=0
 D=1
 E=0
 "
-"i9";"E";"image:  
+"i9";"E";"A,B,C,D,E";"image:
 i9_question
 i9_choice_A
 i9_choice_B
@@ -124,7 +124,7 @@ C=0
 D=0
 E=1
 "
-"i10";"B";"image:  
+"i10";"B";"A,B,C,D,E";"image:
 i10_question
 i10_choice_A
 i10_choice_B
@@ -138,7 +138,7 @@ C=0
 D=0
 E=0
 "
-"i11";"E";"image:  
+"i11";"E";"A,B,C,D,E";"image:
 i11_question
 i11_choice_A
 i11_choice_B
@@ -152,7 +152,7 @@ C=0
 D=0
 E=1
 "
-"i12";"A";"image:  
+"i12";"A";"A,B,C,D,E";"image:
 i12_question
 i12_choice_A
 i12_choice_B
@@ -166,7 +166,7 @@ C=0
 D=0
 E=0
 "
-"i13";"A";"image:  
+"i13";"A";"A,B,C,D,E";"image:
 i13_question
 i13_choice_A
 i13_choice_B
@@ -180,21 +180,19 @@ C=0
 D=0
 E=0
 "
-"i14";"E";"image:  
+"i14";"E";"A,B,C,E";"image:
 i14_question
 i14_choice_A
 i14_choice_B
 i14_choice_C
-i14_choice_D
 i14_choice_E
 
 A=0
 B=0
 C=0
-D=0
 E=1
 "
-"i15";"E";"image:  
+"i15";"E";"A,B,C,D,E";"image:
 i15_question
 i15_choice_A
 i15_choice_B

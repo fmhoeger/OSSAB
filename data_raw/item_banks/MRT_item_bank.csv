@@ -1,70 +1,70 @@
-"key";"correct_answer";"logic"
-"i1";"A";"image: i1_question
+"key";"correct_answer";"choices";"logic"
+"i1";"A";"A,B,C";"image: i1_question
 A = 1
 B = 0
 C = 0"
-"i2";"C";"image: i2_question
+"i2";"C";"A,B,C";"image: i2_question
 A = 0
 B = 0
 C = 1"
-"i3";"A";"image: i3_question
+"i3";"A";"A,B,C";"image: i3_question
 A = 1
 B = 0
 C = 0
 "
-"i4";"B";"image: i4_question
+"i4";"B";"A,B,C";"image: i4_question
 A = 0
 B = 1
 C = 0
 "
-"i5";"C";"image: i5_question
+"i5";"C";"A,B,C";"image: i5_question
 A = 0
 B = 0
 C = 1
 "
-"i6";"B";"image: i6_question
+"i6";"B";"A,B,C";"image: i6_question
 A = 0
 B = 1
 C = 0
 "
-"i7";"C";"image: i7_question
+"i7";"C";"A,B,C";"image: i7_question
 A = 0
 B = 0
 C = 1
 "
-"i8";"B";"image: i8_question
+"i8";"B";"A,B,C";"image: i8_question
 A = 0
 B = 1
 C = 0"
-"i9";"B";"image: i9_question
+"i9";"B";"A,B,C";"image: i9_question
 A = 0
 B = 1
 C = 0"
-"i10";"C";"image: i10_question
+"i10";"C";"A,B,C";"image: i10_question
 A = 0
 B = 0
 C = 1"
-"i11";"B";"image: i11_question
+"i11";"B";"A,B,C";"image: i11_question
 A = 0
 B = 1
 C = 0"
-"i12";"B";"image: i12_question
+"i12";"B";"A,B,C";"image: i12_question
 A = 0
 B = 1
 C = 0"
-"i13";"C";"image: i13_question
+"i13";"C";"A,B,C";"image: i13_question
 A = 0
 B = 0
 C = 1"
-"i14";"C";"image: i14_question
+"i14";"C";"A,B,C";"image: i14_question
 A = 0
 B = 0
 C = 1"
-"i15";"B";"image: i15_question
+"i15";"B";"A,B,C";"image: i15_question
 A = 0
 B = 1
 C = 0"
-"i16";"A";"image: i16_question
+"i16";"A";"A,B,C";"image: i16_question
 A = 1
 B = 0
 C = 0"
