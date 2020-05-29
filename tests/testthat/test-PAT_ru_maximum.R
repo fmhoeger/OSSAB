@@ -25,8 +25,8 @@ app$click("button-A")
 app$click("A")
 app$click("button-B")
 app$click("B")
-app$click("button-B")
-app$click("B")
+app$click("button-C")
+app$click("C")
 app$click("button-C")
 app$click("C")
 app$click("button-C")
@@ -65,7 +65,7 @@ expect_equal(
     i1 = "E",
     i2 = "A",
     i3 = "B",
-    i4 = "B",
+    i4 = "C",
     i5 = "C",
     i6 = "C",
     i7 = "C",
