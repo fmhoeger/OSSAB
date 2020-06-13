@@ -119,4 +119,3 @@ Item <- function(label,
                      get_answer = get_answer,
                      on_complete = NULL)
 }
-

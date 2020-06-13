@@ -72,7 +72,10 @@ standalone <- function(label,
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
-      languages = languages
+      languages = languages,
+      logo = "www/images/sirius_logo.jpg",
+      logo_width = "100px",
+      logo_height = "auto"
     )
   )
 }

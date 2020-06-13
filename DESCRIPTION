@@ -1,7 +1,7 @@
 Package: OSSAB
 Type: Package
 Title: Online Short Spatial Ability Battery (OSSAB)
-Version: 0.99.6
+Version: 0.99.7
 Author: Frank Höger
 Maintainer: Frank Höger <fmhoeger@mirsem.org>
 Description: Implementation of 4 spatial ability tests: MRT (Mechanical Reasoning Test), PFT (Paper Folding Test), PAT (Pattern Assembly Test) and SRT (Shape Rotation Test).
