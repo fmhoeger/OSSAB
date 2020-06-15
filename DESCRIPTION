@@ -1,7 +1,7 @@
 Package: OSSAB
 Type: Package
 Title: Online Short Spatial Ability Battery (OSSAB)
-Version: 0.99.8
+Version: 0.99.9
 Author: Frank Höger
 Maintainer: Frank Höger <fmhoeger@mirsem.org>
 Description: Implementation of 4 spatial ability tests: MRT (Mechanical Reasoning Test), PFT (Paper Folding Test), PAT (Pattern Assembly Test) and SRT (Shape Rotation Test).
@@ -15,12 +15,10 @@ Depends:
 Imports:
     dplyr (>= 1.0.0),
     htmltools (>= 0.4.0),
-    methods (>= 3.6.0),
     plotly (>= 4.9.2.1),
     psychTestR (>= 2.19.1),
     purrr (>= 0.3.4),
-    shiny (>= 1.4.0),
-    stats (>= 3.6.3)
+    shiny (>= 1.4.0)
 Suggests:
     codetools,
     covr,
