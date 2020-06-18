@@ -23,7 +23,6 @@ MRT <- function(dict,
                 with_practice = TRUE,
                 with_feedback = FALSE,
                 label = "MRT") {
-
   stopifnot(purrr::is_scalar_character(label),
             purrr::is_scalar_logical(with_practice))
 

@@ -6,15 +6,12 @@
 This function launches a standalone testing session for the PFT questionnaire.}
 \usage{
 PFT_standalone(
-  dict = OSSAB::PFT_dict,
   item_bank = OSSAB::PFT_item_bank,
   languages = c("ru", "en"),
   ...
 )
 }
 \arguments{
-\item{dict}{The psychTestR dictionary used for internationalisation.}
-
 \item{item_bank}{The item_bank of test items used in the PFT.}
 
 \item{languages}{(Character vector)

@@ -13,7 +13,7 @@ main_test <- function(label, item_bank, timeout_in_msec) {
                       item_number = item_number,
                       choices = choices,
                       answer = correct_answer,
-                      prompt = psychTestR::i18n(sprintf("QUESTION_%d", item_number), html = TRUE),
+                      prompt = psychTestR::i18n(sprintf("%s_QUESTION_%d", label, item_number), html = TRUE),
                       button_text = psychTestR::i18n("NEXT"),
                       timeout_in_msec = timeout_in_msec,
                       save_answer = TRUE)

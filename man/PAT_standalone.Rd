@@ -6,15 +6,12 @@
 This function launches a standalone testing session for the PAT questionnaire.}
 \usage{
 PAT_standalone(
-  dict = OSSAB::PAT_dict,
   item_bank = OSSAB::PAT_item_bank,
   languages = c("ru", "en"),
   ...
 )
 }
 \arguments{
-\item{dict}{The psychTestR dictionary used for internationalisation.}
-
 \item{item_bank}{The item_bank of test items used in the PAT.}
 
 \item{languages}{(Character vector)

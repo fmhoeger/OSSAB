@@ -65,7 +65,7 @@ get_answer_button <- function(label,
                        height = height,
                        margin = height / 10)
   } else {
-    shiny::actionButton(paste0("button-", choice_id), psychTestR::i18n(sprintf("QUESTION_%d_CHOICE_%s", item_number, choice_id)), style = "margin: 8px 6px 0px 6px;", class = paste0("img-button-", item_id), onclick = "set_choice_value(this)")
+    shiny::actionButton(paste0("button-", choice_id), psychTestR::i18n(sprintf("%s_QUESTION_%d_CHOICE_%s", label, item_number, choice_id)), style = "margin: 8px 6px 0px 6px;", class = paste0("img-button-", item_id), onclick = "set_choice_value(this)")
   }
 }
 

@@ -28,7 +28,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #' @export
 standalone <- function(label,
-                       dict,
+                       dict = OSSAB::OSSAB_dict,
                        item_bank,
                        languages = c("ru", "en"),
                        admin_password = "sirius",
@@ -68,7 +68,7 @@ standalone <- function(label,
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
-      title = dict$translate("TITLE", languages[1]),
+      title = dict$translate(sprintf("%s_TITLE", label), languages[1]),
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
@@ -82,7 +82,6 @@ standalone <- function(label,
 
 #' MRT Standalone
 #' This function launches a standalone testing session for the MRT questionnaire.
-#' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the MRT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
@@ -91,12 +90,11 @@ standalone <- function(label,
 #' @param ... Further arguments to be passed to \code{\link{MRT_standalone}()}.
 #' @export
 MRT_standalone <-
-    function(dict = OSSAB::MRT_dict, item_bank = OSSAB::MRT_item_bank, languages = c("ru", "en"), ...)
-    standalone(label = "MRT", dict = dict, item_bank = item_bank, languages = languages, ...)
+    function(item_bank = OSSAB::MRT_item_bank, languages = c("ru", "en"), ...)
+    standalone(label = "MRT", item_bank = item_bank, languages = languages, ...)
 
 #' PFT Standalone
 #' This function launches a standalone testing session for the PFT questionnaire.
-#' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the PFT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
@@ -105,12 +103,11 @@ MRT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PFT_standalone}()}.
 #' @export
 PFT_standalone <-
-  function(dict = OSSAB::PFT_dict, item_bank = OSSAB::PFT_item_bank, languages = c("ru", "en"), ...)
-    standalone(label = "PFT", dict = dict, item_bank = item_bank, languages = languages, ...)
+  function(item_bank = OSSAB::PFT_item_bank, languages = c("ru", "en"), ...)
+    standalone(label = "PFT", item_bank = item_bank, languages = languages, ...)
 
 #' PAT Standalone
 #' This function launches a standalone testing session for the PAT questionnaire.
-#' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the PAT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
@@ -119,12 +116,11 @@ PFT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PAT_standalone}()}.
 #' @export
 PAT_standalone <-
-  function(dict = OSSAB::PAT_dict, item_bank = OSSAB::PAT_item_bank, languages = c("ru", "en"), ...)
-    standalone(label = "PAT", dict = dict, item_bank = item_bank, languages = languages, ...)
+  function(item_bank = OSSAB::PAT_item_bank, languages = c("ru", "en"), ...)
+    standalone(label = "PAT", item_bank = item_bank, languages = languages, ...)
 
 #' SRT Standalone
 #' This function launches a standalone testing session for the SRT questionnaire.
-#' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the SRT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
@@ -133,5 +129,5 @@ PAT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SRT_standalone}()}.
 #' @export
 SRT_standalone <-
-  function(dict = OSSAB::SRT_dict, item_bank = OSSAB::SRT_item_bank, languages = c("ru", "en"), ...)
-    standalone(label = "SRT", dict = dict, item_bank = item_bank, languages = languages, ...)
+  function(item_bank = OSSAB::SRT_item_bank, languages = c("ru", "en"), ...)
+    standalone(label = "SRT", item_bank = item_bank, languages = languages, ...)

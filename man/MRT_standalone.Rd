@@ -6,15 +6,12 @@
 This function launches a standalone testing session for the MRT questionnaire.}
 \usage{
 MRT_standalone(
-  dict = OSSAB::MRT_dict,
   item_bank = OSSAB::MRT_item_bank,
   languages = c("ru", "en"),
   ...
 )
 }
 \arguments{
-\item{dict}{The psychTestR dictionary used for internationalisation.}
-
 \item{item_bank}{The item_bank of test items used in the MRT.}
 
 \item{languages}{(Character vector)

@@ -6,7 +6,7 @@
 \usage{
 standalone(
   label,
-  dict,
+  dict = OSSAB::OSSAB_dict,
   item_bank,
   languages = c("ru", "en"),
   admin_password = "sirius",
