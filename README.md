@@ -1,6 +1,10 @@
 # Online Short Spatial Ability Battery (OSSAB)
 
+<!-- badges: start -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://tidyverse.org/lifecycle/#maturing)
 [![Travis build status](https://travis-ci.org/fmhoeger/OSSAB.svg?branch=master)](https://travis-ci.org/fmhoeger/OSSAB)
+[![Coverage status](https://codecov.io/gh/fmhoeger/OSSAB/branch/master/graph/badge.svg)](https://codecov.io/github/fmhoeger/OSSAB?branch=master)
+<!-- badges: end -->
 
 The OSSAB package contains spatial ability tests.
 
