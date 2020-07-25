@@ -9,6 +9,10 @@
 #' consider using \code{\link{MRT_standalone}()}.
 #' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the MRT.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
+#' The first language is selected by default.
 #' @param timeout_in_msec Time in milliseconds until images of a test item disappear.
 #' Defaults to 25000.
 #' @param with_practice (Logical scalar) Whether to include the training phase.
@@ -19,6 +23,7 @@
 #' @export
 MRT <- function(dict,
                 item_bank,
+                languages = c("ru", "en"),
                 timeout_in_msec = 25000,
                 with_practice = TRUE,
                 with_feedback = FALSE,
@@ -27,10 +32,11 @@ MRT <- function(dict,
             purrr::is_scalar_logical(with_practice))
 
   psychTestR::join(
-    if (with_practice) psychTestR::new_timeline(instructions(label), dict = dict),
+    if (with_practice) psychTestR::new_timeline(instructions(label, languages[1]), dict = dict),
     psychTestR::new_timeline(
       main_test(label = label,
                 item_bank = item_bank,
+                language = languages[1],
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
     if (with_feedback) feedback_with_graph("MRT", dict)

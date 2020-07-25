@@ -26,7 +26,7 @@ standalone(
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include Russian (\code{"ru"}), and English (\code{"en"}).
+Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 The first language is selected by default.}
 
 \item{admin_password}{(Scalar character) Password for accessing the admin panel.}

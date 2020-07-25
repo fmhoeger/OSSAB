@@ -1,18 +1,17 @@
-main_test <- function(label, item_bank, timeout_in_msec) {
+main_test <- function(label, item_bank, language = "shared", timeout_in_msec = 0) {
   key <- NULL
   elts <- c()
   keys <- item_bank %>% pull(key)
   item_numbers <- as.numeric(gsub("[^0-9]", "", keys))
 
   for (item_number in item_numbers) {
-    correct_answer <- item_bank[item_bank$key == paste0("i", item_number), "correct_answer"]
     choices <- strsplit(item_bank[item_bank$key == paste0("i", item_number), "choices"], ",")[[1]]
 
     item_page <- Item(label = label,
+                      language = language,
                       item_prefix = "i",
                       item_number = item_number,
                       choices = choices,
-                      answer = correct_answer,
                       prompt = psychTestR::i18n(sprintf("%s_QUESTION_%d", label, item_number), html = TRUE),
                       button_text = psychTestR::i18n("NEXT"),
                       timeout_in_msec = timeout_in_msec,

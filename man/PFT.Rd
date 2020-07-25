@@ -7,6 +7,7 @@
 PFT(
   dict,
   item_bank,
+  languages = c("ru", "en"),
   timeout_in_msec = 20000,
   with_practice = TRUE,
   with_feedback = FALSE,
@@ -17,6 +18,11 @@ PFT(
 \item{dict}{The psychTestR dictionary used for internationalisation.}
 
 \item{item_bank}{The item_bank of test items used in the PFT.}
+
+\item{languages}{(Character vector)
+Determines the languages available to participants.
+Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
+The first language is selected by default.}
 
 \item{timeout_in_msec}{Time in milliseconds until images of a test item disappear.
 Defaults to 20000.}

@@ -10,6 +10,7 @@ trigger_img_button <- function (inputId, item_id, img_src, width, height, margin
 }
 
 NAFC_page_with_img <- function(label,
+                               language,
                                prompt,
                                item_id,
                                answer_block,
@@ -27,7 +28,7 @@ NAFC_page_with_img <- function(label,
 
   ui <- shiny::div(
     tagify(prompt),
-    shiny::tags$img(id = item_id, src = sprintf("www/images/%s/%s/%s_question.png", label, item_id, item_id), style = question_image_style),
+    shiny::tags$img(id = item_id, src = sprintf("www/images/%s/%s/%s/%s_question.png", label, language, item_id, item_id), style = question_image_style),
     shiny::div(answer_block, id = response_ui_id, style="width: fit-content;"),
     shiny::p(psychTestR::trigger_button(paste0("no-id-", item_id), psychTestR::i18n("FORWARD"), style = "display: block; margin-top: 22px;", class = paste(paste0("forward-button-", item_id), "shiny-bound-input"), enable_after = 86400)),
     shiny::tags$script(shiny::HTML(sprintf("function set_choice_value(elem) { var id = elem.id.split('-')[1]; var forward_buttons = document.getElementsByClassName('forward-button-%s'); var image_buttons = document.getElementsByClassName('img-button-%s'); for (var i=0, len=forward_buttons.length; i<len; i++) { forward_buttons[i].id = id; forward_buttons[i].disabled = false; }; for (var i=0, len=image_buttons.length; i<len; i++) { image_buttons[i].classList.remove('active_button'); }; elem.classList.add('active_button') }", item_id, item_id))),
@@ -55,7 +56,7 @@ get_answer_button <- function(label,
                               height = 80,
                               index) {
   item_id <- sprintf("%s%d", item_prefix, item_number)
-  img_src <- file.path("www/images", label, item_id, sprintf("%s_choice_%s.png", item_id, choice_id))
+  img_src <- file.path("www/images", label, "shared", item_id, sprintf("%s_choice_%s.png", item_id, choice_id))
 
   if (as_image_button) {
     trigger_img_button(inputId = choice_id,
@@ -94,10 +95,10 @@ get_answer_block <- function(label,
 }
 
 Item <- function(label,
+                 language,
                  item_prefix,
                  item_number,
                  choices,
-                 answer,
                  prompt = "",
                  button_text = "",
                  timeout_in_msec = NULL,
@@ -110,6 +111,7 @@ Item <- function(label,
   answer_block <- get_answer_block(label, item_prefix, item_number, choices, as_image_button = as_image_button)
 
   NAFC_page_with_img(label = label,
+                     language = language,
                      prompt = page_prompt,
                      item_id = item_id,
                      answer_block = answer_block,

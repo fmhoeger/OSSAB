@@ -9,6 +9,10 @@
 #' consider using \code{\link{PFT_standalone}()}.
 #' @param dict The psychTestR dictionary used for internationalisation.
 #' @param item_bank The item_bank of test items used in the PFT.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
+#' The first language is selected by default.
 #' @param timeout_in_msec Time in milliseconds until images of a test item disappear.
 #' Defaults to 20000.
 #' @param with_practice (Logical scalar) Whether to include the training phase.
@@ -19,16 +23,16 @@
 #' @export
 PFT <- function(dict,
                 item_bank,
+                languages = c("ru", "en"),
                 timeout_in_msec = 20000,
                 with_practice = TRUE,
                 with_feedback = FALSE,
                 label = "PFT") {
-
   stopifnot(purrr::is_scalar_character(label),
             purrr::is_scalar_logical(with_practice))
 
   psychTestR::join(
-    if (with_practice) psychTestR::new_timeline(instructions(label), dict = dict),
+    if (with_practice) psychTestR::new_timeline(instructions(label, languages[1]), dict = dict),
     psychTestR::new_timeline(
       main_test(label = label,
                 item_bank = item_bank,

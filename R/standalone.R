@@ -13,7 +13,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @param item_bank The item_bank of test items used in the PFT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include Russian (\code{"ru"}), and English (\code{"en"}).
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 #' The first language is selected by default.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
 #' @param researcher_email (Scalar character)
@@ -51,6 +51,7 @@ standalone <- function(label,
     get(label)(
       dict = dict,
       item_bank = item_bank,
+      language = languages[1],
       with_practice = with_practice,
       with_feedback = with_feedback,
       ...
@@ -85,7 +86,7 @@ standalone <- function(label,
 #' @param item_bank The item_bank of test items used in the MRT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{MRT_standalone}()}.
 #' @export
@@ -98,7 +99,7 @@ MRT_standalone <-
 #' @param item_bank The item_bank of test items used in the PFT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{PFT_standalone}()}.
 #' @export
@@ -111,7 +112,7 @@ PFT_standalone <-
 #' @param item_bank The item_bank of test items used in the PAT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{PAT_standalone}()}.
 #' @export
@@ -124,7 +125,7 @@ PAT_standalone <-
 #' @param item_bank The item_bank of test items used in the SRT.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SRT_standalone}()}.
 #' @export

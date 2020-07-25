@@ -16,7 +16,7 @@ PAT_standalone(
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
 The first language is selected by default.}
 
 \item{...}{Further arguments to be passed to \code{\link{PAT_standalone}()}.}
