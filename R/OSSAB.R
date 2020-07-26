@@ -25,6 +25,7 @@ OSSAB_battery <- function(title = "Online Short Spatial Ability Battery",
                           ...) {
   elts <- c(register_participant(validate_id, dict))
   elts <- append(elts, c(tests))
+  elts <- append(elts, total_scoring())
   elts <- append(elts, c(psychTestR::elt_save_results_to_disk(complete = TRUE)))
   elts <- append(elts,
     c(psychTestR::new_timeline(
@@ -43,6 +44,22 @@ OSSAB_battery <- function(title = "Online Short Spatial Ability Battery",
                                    researcher_email = researcher_email,
                                    demo = FALSE,
                                    languages = languages))
+}
+
+total_scoring <- function() {
+  psychTestR::code_block(function(state, ...) {
+    results <- psychTestR::get_results(state = state, complete = FALSE)
+    score <- 0
+
+    for (test in names(results)) {
+      num_of_items <- if (test == "MRT") { 16 } else { 15 }
+      score <- score + results[[test]][["score"]] / num_of_items * 100
+    }
+
+    psychTestR::save_result(place = state,
+                            label = "total_score",
+                            value = score / length(names(results)))
+  })
 }
 
 register_participant <- function(validate_id, dict) {

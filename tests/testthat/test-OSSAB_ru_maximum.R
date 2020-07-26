@@ -124,7 +124,7 @@ app$expect_ui_text("Ваш результат записан. Это окно м
 
 results <- app$get_results() %>% as.list()
 
-expect_equal(names(results), c("MRT", "PAT", "PFT", "SRT"))
+expect_equal(names(results), c("MRT", "PAT", "PFT", "SRT", "results"))
 
 expect_equal(
   results[["MRT"]],
@@ -215,4 +215,10 @@ expect_equal(
   )
 )
 
+expect_equal(
+  results[["results"]],
+  list(
+    total_score = 100
+  )
+)
 app$stop()
