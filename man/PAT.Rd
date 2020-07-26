@@ -5,8 +5,8 @@
 \title{PAT}
 \usage{
 PAT(
-  dict,
-  item_bank,
+  dict = OSSAB::OSSAB_dict,
+  item_bank = OSSAB::PAT_item_bank,
   languages = c("ru", "en"),
   timeout_in_msec = 20000,
   with_practice = TRUE,

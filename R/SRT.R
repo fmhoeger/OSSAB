@@ -21,8 +21,8 @@
 #' Defaults to FALSE.
 #' @param label (Character scalar) Label to give the SRT results in the output file.
 #' @export
-SRT <- function(dict,
-                item_bank,
+SRT <- function(dict = OSSAB::OSSAB_dict,
+                item_bank = OSSAB::SRT_item_bank,
                 languages = c("ru", "en"),
                 timeout_in_msec = 20000,
                 with_practice = TRUE,
@@ -32,11 +32,10 @@ SRT <- function(dict,
             purrr::is_scalar_logical(with_practice))
 
   psychTestR::join(
-    if (with_practice) psychTestR::new_timeline(instructions(label, "shared"), dict = dict),
+    if (with_practice) psychTestR::new_timeline(instructions(label), dict = dict),
     psychTestR::new_timeline(
       main_test(label = label,
                 item_bank = item_bank,
-                language = "shared",
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
     if (with_feedback) feedback_with_graph("SRT", dict)

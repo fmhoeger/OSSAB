@@ -21,8 +21,8 @@
 #' Defaults to FALSE.
 #' @param label (Character scalar) Label to give the PFT results in the output file.
 #' @export
-PFT <- function(dict,
-                item_bank,
+PFT <- function(dict = OSSAB::OSSAB_dict,
+                item_bank = OSSAB::PFT_item_bank,
                 languages = c("ru", "en"),
                 timeout_in_msec = 20000,
                 with_practice = TRUE,

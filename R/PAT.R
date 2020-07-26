@@ -21,8 +21,8 @@
 #' Defaults to FALSE.
 #' @param label (Character scalar) Label to give the PAT results in the output file.
 #' @export
-PAT <- function(dict,
-                item_bank,
+PAT <- function(dict = OSSAB::OSSAB_dict,
+                item_bank = OSSAB::PAT_item_bank,
                 languages = c("ru", "en"),
                 timeout_in_msec = 20000,
                 with_practice = TRUE,

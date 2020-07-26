@@ -21,8 +21,8 @@
 #' Defaults to FALSE.
 #' @param label (Character scalar) Label to give the MRT results in the output file.
 #' @export
-MRT <- function(dict,
-                item_bank,
+MRT <- function(dict = OSSAB::OSSAB_dict,
+                item_bank = OSSAB::MRT_item_bank,
                 languages = c("ru", "en"),
                 timeout_in_msec = 25000,
                 with_practice = TRUE,
