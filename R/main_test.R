@@ -47,18 +47,3 @@ scoring <- function(label, item_bank) {
                             value = sum(scores))
   })
 }
-
-get_prompt <- function(item_number, num_items) {
-  shiny::div(
-    paste(psychTestR::i18n(
-      "PAGE_HEADER",
-      sub = list(num_question = item_number,
-                 num_items = if (is.null(num_items))
-                   "?" else
-                     num_items)), paste0("(", item_number, "/", num_items, ")")),
-    shiny::p(
-      psychTestR::i18n("PROMPT"),
-      style = "font-weight: normal;"),
-    style = "text-align: center; margin-bottom: 20px;"
-  )
-}

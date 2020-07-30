@@ -1,6 +1,3 @@
-messagef <- function(...) message(sprintf(...))
-printf <- function(...) print(sprintf(...))
-
 is.scalar.character <- function(x) {
   is.character(x) && is.scalar(x)
 }
