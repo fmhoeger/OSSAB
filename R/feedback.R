@@ -23,6 +23,7 @@ feedback_page <- function() {
             psychTestR::i18n("DEBRIEF_TOP"),
             feedback_plot(final_scores),
             shiny::div(psychTestR::i18n("DEBRIEF_BOTTOM"), style = "text-align: left;"),
+            shiny::div(psychTestR::i18n("REFERENCES"), style = "text-align: left;"),
             psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "margin-top: 15px")
           )
         )
