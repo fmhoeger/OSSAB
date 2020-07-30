@@ -22,6 +22,11 @@ feedback_page <- function() {
           ui = shiny::div(
             psychTestR::i18n("DEBRIEF_TOP"),
             feedback_plot(final_scores),
+            if ("SRT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_SRT"), style = "text-align: left;"),
+            if ("MRT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_MRT"), style = "text-align: left;"),
+            if ("PFT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_PFT"), style = "text-align: left;"),
+            if ("PAT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_PAT"), style = "text-align: left;"),
+            shiny::br(),
             shiny::div(psychTestR::i18n("DEBRIEF_BOTTOM"), style = "text-align: left;"),
             shiny::div(psychTestR::i18n("REFERENCES"), style = "text-align: left;"),
             psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "margin-top: 15px")
@@ -61,5 +66,5 @@ feedback_plot <- function(final_scores) {
                                 panel.grid.minor.x = ggplot2::element_line(),
                                 plot.title = ggplot2::element_text(hjust = 0.5, size = 12))
 
-  plotly::ggplotly(plot, id = "plot", width = 480, height = length(labels) * 60 + 150) %>% plotly::config(displayModeBar = FALSE)
+  plotly::ggplotly(plot, id = "plot", width = 500, height = length(labels) * 60 + 150) %>% plotly::config(displayModeBar = FALSE)
 }

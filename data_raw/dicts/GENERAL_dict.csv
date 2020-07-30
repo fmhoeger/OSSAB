@@ -25,12 +25,11 @@
 Результаты вы можете увидеть ниже:";"<b>You have completed the testing!</b>
 
 You can see the results below:"
-"DEBRIEF_BOTTOM";"Тест “Ментальное вращение” = SRT.score/15*100<br>
-Тест “Понимание законов механики” =  MRT.score/16*100<br>
-Тест “Оригами” = PFT.score/15*100<br>
-Тест “Сборка моделей” = PAT.score/15*100
-
-Все эти тесты измеряют пространственные способности. Так исследователи называют способности, которые позволяют нам понимать и запоминать пространственные отношения между объектами, а также совершать ментальные манипуляции с этими отношениями и визуализировать изменения этих отношений. Обратите внимание: похожи ли ваши результаты по разным тестам между собой? Судя по предыдущим исследованиям, для выполнения этих тестов задействуются во многом одни и те же когнитивные процессы, хотя задания очень разные.
+"LEGEND_SRT";"Тест “Ментальное вращение” = SRT.score/15*100";"Test “Mental Rotation” = SRT.score/15*100"
+"LEGEND_MRT";"Тест “Понимание законов механики” =  MRT.score/16*100";"Test “Understanding the laws of mechanics” = MRT.score/16*100"
+"LEGEND_PFT";"Тест “Оригами” = PFT.score/15*100";"Test “Origami” = PFT.score/15*100"
+"LEGEND_PAT";"Тест “Сборка моделей” = PAT.score/15*100";"Test “Assembly of models” = PAT.score/15*100"
+"DEBRIEF_BOTTOM";"Все эти тесты измеряют пространственные способности. Так исследователи называют способности, которые позволяют нам понимать и запоминать пространственные отношения между объектами, а также совершать ментальные манипуляции с этими отношениями и визуализировать изменения этих отношений. Обратите внимание: похожи ли ваши результаты по разным тестам между собой? Судя по предыдущим исследованиям, для выполнения этих тестов задействуются во многом одни и те же когнитивные процессы, хотя задания очень разные.
 
 Пространственные способности связаны с успешностью решения повседневных задач, оценками по математике и достижениями в технических специальностях.
 
@@ -40,12 +39,7 @@ You can see the results below:"
 
 Если у вас есть вопросы, напишите нам: tsigeman.es@talantiuspeh.ru или lihanov.mv@talantiuspeh.ru 
 
-Если вы хотите больше узнать о пространственных способностях, ниже даны материалы на русском и английском языках:";"Test “Mental Rotation” = SRT.score/15*100<br>
-Test “Understanding the laws of mechanics” = MRT.score/16*100<br>
-Test “Origami” = PFT.score/15*100<br>
-Test “Assembly of models” = PAT.score/15*100
-
-All these tests measure spatial abilities. This is what researchers call abilities that allow us to understand and store spatial relationships between objects, and to mentally manipulate those relationships and visualize changes in those relationships. Note: Are your results similar in different tests? According to previous studies, the same cognitive processes are used to accomplish these tests, although the tasks are very different.
+Если вы хотите больше узнать о пространственных способностях, ниже даны материалы на русском и английском языках:";"All these tests measure spatial abilities. This is what researchers call abilities that allow us to understand and store spatial relationships between objects, and to mentally manipulate those relationships and visualize changes in those relationships. Note: Are your results similar in different tests? According to previous studies, the same cognitive processes are used to accomplish these tests, although the tasks are very different.
 
 Spatial abilities are related to the success of everyday tasks, math scores and accomplishments in technical areas.
 
