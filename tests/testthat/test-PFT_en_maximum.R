@@ -35,9 +35,7 @@ app$click(c("button-E", "E"))
 app$click(c("button-B", "B"))
 app$click(c("button-A", "A"))
 
-app$expect_ui_text("Results Continue")
 app$click_next()
-
 app$expect_ui_text("Your results have been saved. You can close the browser window now.")
 
 results <- app$get_results() %>% as.list()

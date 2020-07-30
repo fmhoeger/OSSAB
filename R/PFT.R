@@ -29,15 +29,16 @@ PFT <- function(dict = OSSAB::OSSAB_dict,
                 with_feedback = FALSE,
                 label = "PFT") {
   stopifnot(purrr::is_scalar_character(label),
-            purrr::is_scalar_logical(with_practice))
+            purrr::is_scalar_logical(with_practice),
+            purrr::is_scalar_logical(with_feedback))
 
   psychTestR::join(
-    if (with_practice) psychTestR::new_timeline(instructions(label, languages[1]), dict = dict),
+    if (with_practice) instructions(label, languages[1]),
     psychTestR::new_timeline(
       main_test(label = label,
                 item_bank = item_bank,
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
-    if (with_feedback) feedback_with_graph("PFT", dict)
+    if (with_feedback) feedback_page()
   )
 }

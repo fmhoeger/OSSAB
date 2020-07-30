@@ -118,14 +118,15 @@ app$click(c("button-A", "A"))
 app$click(c("button-A", "A"))
 app$click(c("button-E", "E"))
 app$expect_ui_text("Задание 15. Ниже представлено изображение, составленное из нескольких фигур. Выберите один из пяти вариантов ответа, который является повернутой версией данного изображения. Выберите правильный ответ: Вперёд Далее")
-app$click(c("button-E", "E"))
+app$click(c("button-E"))
+app$click(c("E"))
 
+app$click_next()
 app$expect_ui_text("Ваш результат записан. Это окно можно закрыть.")
 
 results <- app$get_results() %>% as.list()
 
 expect_equal(names(results), c("MRT", "PAT", "PFT", "SRT", "results"))
-
 expect_equal(
   results[["MRT"]],
   list(

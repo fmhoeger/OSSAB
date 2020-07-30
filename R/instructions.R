@@ -10,16 +10,18 @@ instructions_page <- function(label, language, style = "text-align: center; marg
 }
 
 instructions <- function(label, language = "shared") {
-  c(
-    psychTestR::code_block(function(state, ...) {
-      psychTestR::set_local("do_intro", TRUE, state)
-    }),
-    psychTestR::while_loop(
-      test = function(state, ...) psychTestR::get_local("do_intro", state),
-      logic = c(
-        instructions_page(label, language),
-        practice(label, language, 1)
+  psychTestR::new_timeline(
+    c(
+      psychTestR::code_block(function(state, ...) {
+        psychTestR::set_local("do_intro", TRUE, state)
+      }),
+      psychTestR::while_loop(
+        test = function(state, ...) psychTestR::get_local("do_intro", state),
+        logic = c(
+          instructions_page(label, language),
+          practice(label, language, 1)
+        )
       )
-    )
+    ), dict = OSSAB::OSSAB_dict
   )
 }

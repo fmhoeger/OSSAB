@@ -36,9 +36,7 @@ app$click(c("button-E", "E"))
 app$expect_ui_text("Задание 15. Как будет выглядеть лист бумаги, если его свернуть, как показано на примере, и проколоть иглой в нем отверстие? Выберите правильный ответ. Вперёд Далее")
 app$click(c("button-B", "B"))
 
-app$expect_ui_text("Врезультат Вперёд")
 app$click_next()
-
 app$expect_ui_text("Ваш результат записан. Это окно можно закрыть.")
 
 results <- app$get_results() %>% as.list()

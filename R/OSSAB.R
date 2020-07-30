@@ -1,9 +1,10 @@
 #' OSSAB battery
 #'
-#' This function defines the OSSAB battery, a series of tests.
+#' This function defines the OSSAB battery.
 #' Use this function if you want to create a battery of tests.
 #' @param title (Character scalar) Title of the test battery.
-#' @param tests (Character vector)
+#' @param test_modules (Vector of test modules) The tests to be included in the battery.
+#' Possible values are MRT(), PAT(), PFT(), and SRT().
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
@@ -11,22 +12,29 @@
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param admin_password (Character scalar) Password to access the admin panel.
 #' @param researcher_email (Character scalar) Researcher's email; used in participant help message.
+#' @param with_practice (Logical scalar) Whether to include the training phase.
+#' Defaults to TRUE.
+#' @param with_feedback (Logical scalar) Whether to display a feedback page.
+#' Defaults to TRUE.
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
-#' @param ... Further arguments to be passed to \code{\link{OSSAB_battery}()}.
+#' @param ... Further arguments to be passed to \code{\link{OSSAB}()}.
 #' @export
-OSSAB_battery <- function(title = "Online Short Spatial Ability Battery",
-                          tests = c(MRT(), PAT(), PFT(), SRT()),
-                          languages = OSSAB::languages(),
-                          dict = OSSAB::OSSAB_dict,
-                          admin_password = "sirius",
-                          researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
-                          validate_id = "auto",
-                          ...) {
+OSSAB <- function(title = "Online Short Spatial Ability Battery",
+                  test_modules = c(MRT(), PAT(), PFT(), SRT()),
+                  languages = OSSAB::languages(),
+                  dict = OSSAB::OSSAB_dict,
+                  admin_password = "sirius",
+                  researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
+                  with_practice = TRUE,
+                  with_feedback = TRUE,
+                  validate_id = "auto",
+                  ...) {
   elts <- c(register_participant(validate_id, dict))
-  elts <- append(elts, c(tests))
+  elts <- append(elts, test_modules)
   elts <- append(elts, total_scoring())
   elts <- append(elts, c(psychTestR::elt_save_results_to_disk(complete = TRUE)))
+  elts <- append(elts, if (with_feedback) feedback_page())
   elts <- append(elts,
     c(psychTestR::new_timeline(
       psychTestR::final_page(shiny::p(
@@ -51,9 +59,9 @@ total_scoring <- function() {
     results <- psychTestR::get_results(state = state, complete = FALSE)
     score <- 0
 
-    for (test in names(results)) {
-      num_of_items <- if (test == "MRT") { 16 } else { 15 }
-      score <- score + results[[test]][["score"]] / num_of_items * 100
+    for (label in names(results)) {
+      num_of_items <- if (label == "MRT") { 16 } else { 15 }
+      score <- score + results[[label]][["score"]] / num_of_items * 100
     }
 
     psychTestR::save_result(place = state,
