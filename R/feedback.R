@@ -1,5 +1,3 @@
-library(ggplot2)
-
 #' Feedback page
 #'
 #' Page giving the participant graphical and textual feedback at the end of the test.
@@ -10,8 +8,13 @@ feedback_page <- function() {
       psychTestR::reactive_page(function(state, ...) {
         results <- psychTestR::get_results(state = state, complete = TRUE, add_session_info = FALSE)
         final_scores <- list()
+        labels <- rev(names(results))
+        legends <-
+          labels %>% purrr::map(function(label)
+            if (label %in% c("MRT", "PAT", "PFT", "SRT"))
+              shiny::p(psychTestR::i18n(paste0("LEGEND_", label)), style = "text-align: left;"))
 
-        for (label in names(results)) {
+        for (label in labels) {
           if (label %in% c("MRT", "PAT", "PFT", "SRT")) {
             num_of_items <- if (label == "MRT") { 16 } else { 15 }
             final_scores[[label]] = results[[label]][["score"]] / num_of_items * 100
@@ -22,10 +25,7 @@ feedback_page <- function() {
           ui = shiny::div(
             psychTestR::i18n("DEBRIEF_TOP"),
             feedback_plot(final_scores),
-            if ("SRT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_SRT"), style = "text-align: left;"),
-            if ("MRT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_MRT"), style = "text-align: left;"),
-            if ("PFT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_PFT"), style = "text-align: left;"),
-            if ("PAT" %in% names(results)) shiny::p(psychTestR::i18n("LEGEND_PAT"), style = "text-align: left;"),
+            legends,
             shiny::br(),
             shiny::div(psychTestR::i18n("DEBRIEF_BOTTOM"), style = "text-align: left;"),
             shiny::div(psychTestR::i18n("REFERENCES"), style = "text-align: left;"),
@@ -45,6 +45,8 @@ feedback_page <- function() {
 #' @param final_scores (Named list) Contains the scores for the tests.
 #' @export
 feedback_plot <- function(final_scores) {
+  label <- NULL
+  score <- NULL
   labels <- names(final_scores)
   df <- data.frame(label = labels, score = unlist(final_scores[labels]))
 
