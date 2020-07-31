@@ -8,7 +8,7 @@ standalone(
   label,
   dict = OSSAB::OSSAB_dict,
   item_bank,
-  languages = c("ru", "en"),
+  languages = OSSAB::languages,
   admin_password = "sirius",
   researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
   validate_id = "auto",

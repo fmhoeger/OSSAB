@@ -7,7 +7,7 @@ This function launches a standalone testing session for the MRT questionnaire.}
 \usage{
 MRT_standalone(
   item_bank = OSSAB::MRT_item_bank,
-  languages = c("ru", "en"),
+  languages = OSSAB::languages,
   ...
 )
 }

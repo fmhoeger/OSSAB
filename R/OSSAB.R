@@ -2,7 +2,7 @@
 #'
 #' This function defines the OSSAB battery.
 #' Use this function if you want to create a battery of tests.
-#' @param title (Character scalar) Title of the test battery.
+#' @param title (Character scalar) Title of the test battery to be displayed at the top of the page.
 #' @param test_modules (Vector of test modules) The tests to be included in the battery.
 #' Possible values are MRT(), PAT(), PFT(), and SRT().
 #' @param languages (Character vector)
@@ -20,9 +20,9 @@
 #' for default validation which means ID should consist only of alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{OSSAB}()}.
 #' @export
-OSSAB <- function(title = "Online Short Spatial Ability Battery",
+OSSAB <- function(title = "",
                   test_modules = c(MRT(), PAT(), PFT(), SRT()),
-                  languages = OSSAB::languages(),
+                  languages = OSSAB::languages,
                   dict = OSSAB::OSSAB_dict,
                   admin_password = "sirius",
                   researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
@@ -34,7 +34,7 @@ OSSAB <- function(title = "Online Short Spatial Ability Battery",
   elts <- append(elts, test_modules)
   elts <- append(elts, total_scoring())
   elts <- append(elts, c(psychTestR::elt_save_results_to_disk(complete = TRUE)))
-  elts <- append(elts, if (with_feedback) feedback_page())
+  elts <- append(elts, if (with_feedback) feedback_page(languages[[1]]))
   elts <- append(elts,
     c(psychTestR::new_timeline(
       psychTestR::final_page(shiny::p(
@@ -43,6 +43,8 @@ OSSAB <- function(title = "Online Short Spatial Ability Battery",
       ), dict = dict
     ))
   )
+
+  title <- if (title != "") title else OSSAB::title[[languages[[1]]]]
 
   shiny::addResourcePath("www", system.file("www", package = "OSSAB"))
   psychTestR::make_test(

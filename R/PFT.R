@@ -23,7 +23,7 @@
 #' @export
 PFT <- function(dict = OSSAB::OSSAB_dict,
                 item_bank = OSSAB::PFT_item_bank,
-                languages = c("ru", "en"),
+                languages = OSSAB::languages,
                 timeout_in_msec = 20000,
                 with_practice = TRUE,
                 with_feedback = FALSE,
@@ -39,6 +39,6 @@ PFT <- function(dict = OSSAB::OSSAB_dict,
                 item_bank = item_bank,
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
-    if (with_feedback) feedback_page()
+    if (with_feedback) feedback_page(languages[1])
   )
 }

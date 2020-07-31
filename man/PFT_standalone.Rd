@@ -7,7 +7,7 @@ This function launches a standalone testing session for the PFT questionnaire.}
 \usage{
 PFT_standalone(
   item_bank = OSSAB::PFT_item_bank,
-  languages = c("ru", "en"),
+  languages = OSSAB::languages,
   ...
 )
 }

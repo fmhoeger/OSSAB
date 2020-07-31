@@ -30,7 +30,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 standalone <- function(label,
                        dict = OSSAB::OSSAB_dict,
                        item_bank,
-                       languages = c("ru", "en"),
+                       languages = OSSAB::languages,
                        admin_password = "sirius",
                        researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
                        validate_id = "auto",
@@ -91,7 +91,7 @@ standalone <- function(label,
 #' @param ... Further arguments to be passed to \code{\link{MRT_standalone}()}.
 #' @export
 MRT_standalone <-
-    function(item_bank = OSSAB::MRT_item_bank, languages = c("ru", "en"), ...)
+    function(item_bank = OSSAB::MRT_item_bank, languages = OSSAB::languages, ...)
     standalone(label = "MRT", item_bank = item_bank, languages = languages, ...)
 
 #' PFT Standalone
@@ -104,7 +104,7 @@ MRT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PFT_standalone}()}.
 #' @export
 PFT_standalone <-
-  function(item_bank = OSSAB::PFT_item_bank, languages = c("ru", "en"), ...)
+  function(item_bank = OSSAB::PFT_item_bank, languages = OSSAB::languages, ...)
     standalone(label = "PFT", item_bank = item_bank, languages = languages, ...)
 
 #' PAT Standalone
@@ -117,7 +117,7 @@ PFT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PAT_standalone}()}.
 #' @export
 PAT_standalone <-
-  function(item_bank = OSSAB::PAT_item_bank, languages = c("ru", "en"), ...)
+  function(item_bank = OSSAB::PAT_item_bank, languages = OSSAB::languages, ...)
     standalone(label = "PAT", item_bank = item_bank, languages = languages, ...)
 
 #' SRT Standalone
@@ -130,5 +130,5 @@ PAT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SRT_standalone}()}.
 #' @export
 SRT_standalone <-
-  function(item_bank = OSSAB::SRT_item_bank, languages = c("ru", "en"), ...)
+  function(item_bank = OSSAB::SRT_item_bank, languages = OSSAB::languages, ...)
     standalone(label = "SRT", item_bank = item_bank, languages = languages, ...)

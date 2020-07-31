@@ -7,7 +7,7 @@
 PFT(
   dict = OSSAB::OSSAB_dict,
   item_bank = OSSAB::PFT_item_bank,
-  languages = c("ru", "en"),
+  languages = OSSAB::languages,
   timeout_in_msec = 20000,
   with_practice = TRUE,
   with_feedback = FALSE,

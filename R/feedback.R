@@ -1,8 +1,11 @@
 #' Feedback page
 #'
 #' Page giving the participant graphical and textual feedback at the end of the test.
+#'
+#' @param language (Character vector) The language the page is displayed in.
+#' Used to display the title of the page in the correct language.
 #' @export
-feedback_page <- function() {
+feedback_page <- function(language) {
   psychTestR::new_timeline(
     c(
       psychTestR::reactive_page(function(state, ...) {
@@ -29,7 +32,8 @@ feedback_page <- function() {
             shiny::br(),
             shiny::div(psychTestR::i18n("DEBRIEF_BOTTOM"), style = "text-align: left;"),
             shiny::div(psychTestR::i18n("REFERENCES"), style = "text-align: left;"),
-            psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "margin-top: 15px")
+            psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE"), style = "margin-top: 15px"),
+            if (length(labels) > 1) shiny::tags$script(shiny::HTML(sprintf(paste0("document.getElementById('title').innerHTML = '<h4>", OSSAB::title[[language]], "</h4>'"))))
           )
         )
       })

@@ -23,7 +23,7 @@
 #' @export
 MRT <- function(dict = OSSAB::OSSAB_dict,
                 item_bank = OSSAB::MRT_item_bank,
-                languages = c("ru", "en"),
+                languages = OSSAB::languages,
                 timeout_in_msec = 25000,
                 with_practice = TRUE,
                 with_feedback = FALSE,
@@ -40,6 +40,6 @@ MRT <- function(dict = OSSAB::OSSAB_dict,
                 language = languages[1],
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
-    if (with_feedback) feedback_page()
+    if (with_feedback) feedback_page(languages[1])
   )
 }

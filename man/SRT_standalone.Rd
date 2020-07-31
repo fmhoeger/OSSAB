@@ -7,7 +7,7 @@ This function launches a standalone testing session for the SRT questionnaire.}
 \usage{
 SRT_standalone(
   item_bank = OSSAB::SRT_item_bank,
-  languages = c("ru", "en"),
+  languages = OSSAB::languages,
   ...
 )
 }

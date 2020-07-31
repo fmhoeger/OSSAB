@@ -5,9 +5,9 @@
 \title{OSSAB battery}
 \usage{
 OSSAB(
-  title = "Online Short Spatial Ability Battery",
+  title = "",
   test_modules = c(MRT(), PAT(), PFT(), SRT()),
-  languages = OSSAB::languages(),
+  languages = OSSAB::languages,
   dict = OSSAB::OSSAB_dict,
   admin_password = "sirius",
   researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
@@ -18,7 +18,7 @@ OSSAB(
 )
 }
 \arguments{
-\item{title}{(Character scalar) Title of the test battery.}
+\item{title}{(Character scalar) Title of the test battery to be displayed at the top of the page.}
 
 \item{test_modules}{(Vector of test modules) The tests to be included in the battery.
 Possible values are MRT(), PAT(), PFT(), and SRT().}
