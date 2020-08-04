@@ -6,7 +6,7 @@
 \usage{
 OSSAB(
   title = "",
-  test_modules = c(MRT(), PAT(), PFT(), SRT()),
+  tests = c(MRT, PAT, PFT, SRT),
   languages = OSSAB::languages,
   dict = OSSAB::OSSAB_dict,
   admin_password = "sirius",
@@ -20,8 +20,10 @@ OSSAB(
 \arguments{
 \item{title}{(Character scalar) Title of the test battery to be displayed at the top of the page.}
 
-\item{test_modules}{(Vector of test modules) The tests to be included in the battery.
-Possible values are MRT(), PAT(), PFT(), and SRT().}
+\item{tests}{(Vector of test functions) The tests to be included in the battery.
+Possible values are MRT, PAT, PFT, and SRT.
+Example: \code{OSSAB(tests = c(MRT, PFT), languages = "en")}.
+Defaults to \code{c(MRT, PAT, PFT, SRT)}.}
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.

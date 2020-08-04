@@ -3,8 +3,10 @@
 #' This function defines the OSSAB battery.
 #' Use this function if you want to create a battery of tests.
 #' @param title (Character scalar) Title of the test battery to be displayed at the top of the page.
-#' @param test_modules (Vector of test modules) The tests to be included in the battery.
-#' Possible values are MRT(), PAT(), PFT(), and SRT().
+#' @param tests (Vector of test functions) The tests to be included in the battery.
+#' Possible values are MRT, PAT, PFT, and SRT.
+#' Example: \code{OSSAB(tests = c(MRT, PFT), languages = "en")}.
+#' Defaults to \code{c(MRT, PAT, PFT, SRT)}.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"ru"} (Russian), and \code{"en"} (English).
@@ -21,7 +23,7 @@
 #' @param ... Further arguments to be passed to \code{\link{OSSAB}()}.
 #' @export
 OSSAB <- function(title = "",
-                  test_modules = c(MRT(), PAT(), PFT(), SRT()),
+                  tests = c(MRT, PAT, PFT, SRT),
                   languages = OSSAB::languages,
                   dict = OSSAB::OSSAB_dict,
                   admin_password = "sirius",
@@ -30,8 +32,12 @@ OSSAB <- function(title = "",
                   with_feedback = TRUE,
                   validate_id = "auto",
                   ...) {
+  tests <- tests %>% purrr::map(function(test_module) {
+    test_module(languages = languages[[1]])
+  })
+
   elts <- c(register_participant(validate_id, dict))
-  elts <- append(elts, test_modules)
+  elts <- append(elts, tests)
   elts <- append(elts, total_scoring())
   elts <- append(elts, c(psychTestR::elt_save_results_to_disk(complete = TRUE)))
   elts <- append(elts, if (with_feedback) feedback_page(languages[[1]]))
