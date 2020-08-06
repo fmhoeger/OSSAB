@@ -13,7 +13,15 @@ feedback_page <- function() {
         legends <-
           labels %>% purrr::map(function(label)
             if (label %in% c("MRT", "PAT", "PFT", "SRT"))
-              shiny::p(psychTestR::i18n(paste0("LEGEND_", label)), style = "text-align: left;"))
+              shiny::p(psychTestR::i18n(
+                paste0("LEGEND_", label),
+                sub = list(
+                  MRT_score = results[["MRT"]][["score"]],
+                  PAT_score = results[["PAT"]][["score"]],
+                  PFT_score = results[["PFT"]][["score"]],
+                  SRT_score = results[["SRT"]][["score"]]
+                )
+              ), style = "text-align: left;"))
 
         for (label in labels) {
           if (label %in% c("MRT", "PAT", "PFT", "SRT")) {
