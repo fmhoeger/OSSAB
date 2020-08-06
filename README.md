@@ -66,7 +66,7 @@ see http://psychtestr.com/.
 
 The OSSAB currently supports Russian (ru, default) and English (en).
 You can select one of these languages by passing a language code as 
-an argument to `OSSAB_standalone()`, e.g. `OSSAB_standalone(languages = "en")`,
+an argument to `OSSAB()`, e.g. `OSSAB(languages = "en")`,
 or alternatively by passing it as an URL parameter to the test browser,
 eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
 
@@ -92,7 +92,7 @@ specifying the R code to run the app.
 
 ``` r
 library(OSSAB)
-OSSAB_standalone(admin_password = "put-your-password-here")
+OSSAB(admin_password = "put-your-password-here")
 ```
 
 - Save the file (CTRL-O).
