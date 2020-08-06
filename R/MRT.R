@@ -40,6 +40,6 @@ MRT <- function(dict = OSSAB::OSSAB_dict,
                 language = languages[1],
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
-    if (with_feedback) feedback_page(languages[1])
+    if (with_feedback) feedback_page()
   )
 }

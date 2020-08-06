@@ -4,11 +4,7 @@
 \alias{feedback_page}
 \title{Feedback page}
 \usage{
-feedback_page(language)
-}
-\arguments{
-\item{language}{(Character vector) The language the page is displayed in.
-Used to display the title of the page in the correct language.}
+feedback_page()
 }
 \description{
 Page giving the participant graphical and textual feedback at the end of the test.

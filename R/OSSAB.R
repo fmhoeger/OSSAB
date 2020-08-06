@@ -40,7 +40,7 @@ OSSAB <- function(title = "",
   elts <- append(elts, tests)
   elts <- append(elts, total_scoring())
   elts <- append(elts, c(psychTestR::elt_save_results_to_disk(complete = TRUE)))
-  elts <- append(elts, if (with_feedback) feedback_page(languages[[1]]))
+  elts <- append(elts, if (with_feedback) feedback_page())
   elts <- append(elts,
     c(psychTestR::new_timeline(
       psychTestR::final_page(shiny::p(
@@ -50,16 +50,17 @@ OSSAB <- function(title = "",
     ))
   )
 
-  title <- if (title != "") title else OSSAB::title[[languages[[1]]]]
-
   shiny::addResourcePath("www", system.file("www", package = "OSSAB"))
   psychTestR::make_test(
     elts,
-    opt = psychTestR::test_options(title = title,
-                                   admin_password = admin_password,
-                                   researcher_email = researcher_email,
-                                   demo = FALSE,
-                                   languages = languages))
+    opt = psychTestR::test_options(
+      title = dict$translate("BATTERY_TITLE", languages[[1]]),
+      admin_password = admin_password,
+      researcher_email = researcher_email,
+      demo = FALSE,
+      languages = languages
+    )
+  )
 }
 
 total_scoring <- function() {

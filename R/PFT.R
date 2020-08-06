@@ -39,6 +39,6 @@ PFT <- function(dict = OSSAB::OSSAB_dict,
                 item_bank = item_bank,
                 timeout_in_msec = timeout_in_msec),
       dict = dict),
-    if (with_feedback) feedback_page(languages[1])
+    if (with_feedback) feedback_page()
   )
 }
