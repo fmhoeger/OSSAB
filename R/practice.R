@@ -19,14 +19,14 @@ practice_page <- function(label, language, item_number) {
        item_prefix = "p",
        item_number = item_number,
        choices = if (label == "MRT") { c("A", "B", "C") } else { c("A", "B", "C", "D", "E") },
-       prompt = psychTestR::i18n(sprintf("%s_PRACTICE_QUESTION_%d", label, item_number), html = TRUE),
+       prompt = psychTestR::i18n(sprintf("%s_PRACTICE_QUESTION_%d", label, item_number)),
        button_text = psychTestR::i18n("SHOW_ANSWER"),
        save_answer = FALSE)
 }
 
 practice_feedback_page <- function(label, language, item_number, answer) {
   item_id <- sprintf("p%d", item_number)
-  prompt <- psychTestR::i18n(sprintf("%s_PRACTICE_FEEDBACK_%d", label, item_number), html = TRUE)
+  prompt <- psychTestR::i18n(sprintf("%s_PRACTICE_FEEDBACK_%d", label, item_number))
   # correctness_text <- if (answer == correct_answers[label]) { "CORRECT" } else { "INCORRECT" }
 
   ui <- shiny::div(

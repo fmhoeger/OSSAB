@@ -12,7 +12,7 @@ main_test <- function(label, item_bank, language = "shared", timeout_in_msec = 0
                       item_prefix = "i",
                       item_number = item_number,
                       choices = choices,
-                      prompt = psychTestR::i18n(sprintf("%s_QUESTION_%d", label, item_number), html = TRUE),
+                      prompt = psychTestR::i18n(sprintf("%s_QUESTION_%d", label, item_number)),
                       button_text = psychTestR::i18n("NEXT"),
                       timeout_in_msec = timeout_in_msec,
                       save_answer = TRUE)

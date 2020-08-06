@@ -59,7 +59,7 @@ feedback_plot <- function(final_scores) {
   plot <- plot + ggplot2::geom_bar(stat = "identity", width = 0.1)
   plot <- plot + ggplot2::geom_col(width = 0.4)
   plot <- plot + ggplot2::geom_text(ggplot2::aes(label = round(score, 0)), hjust = 0, nudge_y = 5)
-  plot <- plot + ggplot2::ggtitle(psychTestR::i18n("PLOT_TITLE", html = TRUE))
+  plot <- plot + ggplot2::ggtitle(psychTestR::i18n("PLOT_TITLE"))
   plot <- plot + ggplot2::scale_fill_manual(values = rep("#3282b8", length(labels)))
   plot <- plot + ggplot2::scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 10), minor_breaks = NULL)
   plot <- plot + ggplot2::theme_classic(base_size = 16)
