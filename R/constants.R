@@ -11,5 +11,5 @@ languages <- c("ru", "en")
 #' and final page of the battery.
 #'
 #' @export
-title <- list(ru = "OSSAB - Online Short Spatial Ability Battery (ru)",
-              en = "OSSAB - Online Short Spatial Ability Battery")
+title <- list(ru = "Короткая онлайн батарея пространственных способностей",
+              en = "Online Short Spatial Ability Battery")
