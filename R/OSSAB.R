@@ -14,6 +14,21 @@
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param admin_password (Character scalar) Password to access the admin panel.
 #' @param researcher_email (Character scalar) Researcher's email; used in participant help message.
+#' @param problems_info
+#' Message to display at the bottom of the screen
+#' with advice about what to do if a problem occurs.
+#' The default value, "default", gives
+#' a standard English message including the researcher's email (if provided).
+#' Alternatively, the argument can be either
+#' a) an unnamed character scalar providing a non-internationalised message,
+#' b) a named character vector of internationalised messages with the names
+#' corresponding to language codes,
+#' c) a named list of HTML tag objects providing internationalised messages,
+#' for example:
+#' \code{list(en = shiny::tags$span("Problems? Send an email to ",
+#'                                  shiny::tags$b("researcher@domain.org")),
+#'            de = shiny::tags$span("Probleme? Schreibe eine E-Mail an ",
+#'                                  shiny::tags$b("researcher@domain.org")))}.
 #' @param with_practice (Logical scalar) Whether to include the training phase.
 #' Defaults to TRUE.
 #' @param with_feedback (Logical scalar) Whether to display a feedback page.
@@ -28,6 +43,7 @@ OSSAB <- function(title = "",
                   dict = OSSAB::OSSAB_dict,
                   admin_password = "sirius",
                   researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
+                  problems_info = "default",
                   with_practice = TRUE,
                   with_feedback = TRUE,
                   validate_id = "auto",
@@ -57,6 +73,7 @@ OSSAB <- function(title = "",
       title = dict$translate("BATTERY_TITLE", languages[[1]]),
       admin_password = admin_password,
       researcher_email = researcher_email,
+      problems_info = problems_info,
       demo = FALSE,
       languages = languages
     )

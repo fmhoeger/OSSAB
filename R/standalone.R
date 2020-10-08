@@ -19,6 +19,21 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @param researcher_email (Scalar character)
 #' If not \code{NULL}, this researcher's email address is displayed
 #' at the bottom of the screen so that online participants can ask for help.
+#' @param problems_info
+#' Message to display at the bottom of the screen
+#' with advice about what to do if a problem occurs.
+#' The default value, "default", gives
+#' a standard English message including the researcher's email (if provided).
+#' Alternatively, the argument can be either
+#' a) an unnamed character scalar providing a non-internationalised message,
+#' b) a named character vector of internationalised messages with the names
+#' corresponding to language codes,
+#' c) a named list of HTML tag objects providing internationalised messages,
+#' for example:
+#' \code{list(en = shiny::tags$span("Problems? Send an email to ",
+#'                                  shiny::tags$b("researcher@domain.org")),
+#'            de = shiny::tags$span("Probleme? Schreibe eine E-Mail an ",
+#'                                  shiny::tags$b("researcher@domain.org")))}.
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
 #' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
@@ -33,6 +48,7 @@ standalone <- function(label,
                        languages = OSSAB::languages,
                        admin_password = "sirius",
                        researcher_email = "tsigeman.es@talantiuspeh.ru or lihanov.mv@talantiuspeh.ru",
+                       problems_info = "default",
                        validate_id = "auto",
                        with_feedback = TRUE,
                        with_practice = TRUE,
@@ -72,6 +88,7 @@ standalone <- function(label,
       title = dict$translate(sprintf("%s_TITLE", label), languages[1]),
       admin_password = admin_password,
       researcher_email = researcher_email,
+      problems_info = problems_info,
       demo = FALSE,
       languages = languages,
       logo = "www/images/sirius_logo.jpg",
