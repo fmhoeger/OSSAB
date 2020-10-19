@@ -26,7 +26,7 @@ feedback_page <- function() {
         for (label in labels) {
           if (label %in% c("MRT", "PAT", "PFT", "SRT")) {
             num_of_items <- if (label == "MRT") { 16 } else { 15 }
-            final_scores[[label]] = results[[label]][["score"]] / num_of_items * 100
+            final_scores[[psychTestR::i18n(paste0(label, "_SHORT_TITLE"))]] = results[[label]][["score"]] / num_of_items * 100
           }
         }
 
